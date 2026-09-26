@@ -191,7 +191,7 @@ PDF 已分页并内嵌全部 25 幅图，离线阅读或打印用它；Markdown 
 ```bibtex
 @misc{book2026,
   title        = {Generative and Embodied AI Security: Attacks, Defenses, and Engineering Verification from Language Models to World Models},
-  author       = {Mingjun Cheng},
+  author       = {程明骏},
   year         = {2026},
   version      = {v0.2.0},
   howpublished = {\url{https://github.com/ManfredCh/ai-security-book}},
@@ -200,7 +200,7 @@ PDF 已分页并内嵌全部 25 幅图，离线阅读或打印用它；Markdown 
 ```
 
 仓库内附机器可读的 [CITATION.cff](CITATION.cff)，GitHub 的 *Cite this repository* 按钮会读它。
-作者信息已填入：`Mingjun Cheng`（程明骏，Vorynel Co.td），与 PDF 扉页一致。
+作者信息已填入：程明骏（奇异宇宙），与 PDF 扉页一致。
 
 ## 参与贡献
 

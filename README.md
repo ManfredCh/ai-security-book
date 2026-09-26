@@ -222,7 +222,7 @@ by that sign-off.
 ```
 
 A machine-readable [CITATION.cff](CITATION.cff) is included and GitHub's *Cite this repository*
-button reads it. The author is `Mingjun Cheng` (程明骏, Vorynel Co.td), matching the PDF title page.
+button reads it. The author is `Mingjun Cheng` (Vorynel Co.,Ltd), matching the PDF title page.
 
 ## Contributing
 
