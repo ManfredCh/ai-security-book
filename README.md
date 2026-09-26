@@ -213,7 +213,7 @@ by that sign-off.
 ```bibtex
 @misc{book2026,
   title        = {Generative and Embodied AI Security: Attacks, Defenses, and Engineering Verification from Language Models to World Models},
-  author       = {ManfredCh},
+  author       = {Mingjun Cheng},
   year         = {2026},
   version      = {v0.2.0},
   howpublished = {\url{https://github.com/ManfredCh/ai-security-book}},
@@ -222,8 +222,7 @@ by that sign-off.
 ```
 
 A machine-readable [CITATION.cff](CITATION.cff) is included and GitHub's *Cite this repository*
-button reads it. **Replace the `author` field with your preferred name before publishing** — it
-currently carries the GitHub account name.
+button reads it. The author is `Mingjun Cheng` (程明骏, Vorynel Co.td), matching the PDF title page.
 
 ## Contributing
 
