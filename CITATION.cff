@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Generative and Embodied AI Security: Attacks, Defenses, and Engineering Verification from Language Models to World Models"
+abstract: >-
+  Attacks, Defenses, and Engineering Verification from Language Models to World Models. Compiled draft; data cutoff 2026-08-09.
+type: book
+authors:
+  - name: "ManfredCh"
+    # TODO: replace with your preferred author name before publishing
+license: CC-BY-NC-SA-4.0
+version: "0.1.0"
+date-released: "2026-09-26"
+repository-code: "https://github.com/ManfredCh/ai-security-book"
+keywords:
+  - AI security
+  - adversarial machine learning
+  - LLM security
+  - generative model security
+  - embodied AI security
+  - world models
+language: zho
