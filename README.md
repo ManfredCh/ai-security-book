@@ -4,9 +4,9 @@
 
 **What happens to security when a model stops answering questions and starts acting.**
 
-<sub>6 parts · 24 chapters · 193,000 English words · 311-page PDF</sub>
+<sub>6 parts · 24 chapters · 193,000 English words · 313-page PDF</sub>
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ·  [![Status](https://img.shields.io/badge/Status-compiled_draft-orange)](#status-and-limits)  ·  [![Language](https://img.shields.io/badge/Language-English_%7C_%E4%B8%AD%E6%96%87-blue)](#languages-and-editions)  ·  [![English PDF](https://img.shields.io/badge/PDF-311_pp.-red)](release/en/Generative-and-Embodied-AI-Security.pdf)  ·  [![中文 PDF](https://img.shields.io/badge/PDF_%E4%B8%AD%E6%96%87-330_pp.-red)](release/zh/生成式与具身智能安全.pdf)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ·  [![Status](https://img.shields.io/badge/Status-compiled_draft-orange)](#status-and-limits)  ·  [![Language](https://img.shields.io/badge/Language-English_%7C_%E4%B8%AD%E6%96%87-blue)](#languages-and-editions)  ·  [![English PDF](https://img.shields.io/badge/PDF-313_pp.-red)](release/en/Generative-and-Embodied-AI-Security.pdf)  ·  [![中文 PDF](https://img.shields.io/badge/PDF_%E4%B8%AD%E6%96%87-333_pp.-red)](release/zh/生成式与具身智能安全.pdf)
 
 [English](README.md) · [简体中文](README.zh.md)
 
@@ -66,7 +66,7 @@ release gates, incident response, and three templates you can fill in for your o
 | Language | README | Documents |
 |---|---|---|
 | **English** | this file | English edition, 193k words, 450-page PDF |
-| **简体中文** | [README.zh.md](README.zh.md) | 中文原稿，28.0 万汉字，330 页 PDF |
+| **简体中文** | [README.zh.md](README.zh.md) | 中文原稿，28.0 万汉字，333 页 PDF |
 
 
 ## Overview
@@ -93,45 +93,46 @@ interface** — and applies it across four domains, then turns the analysis into
 Every chapter below links straight into the manuscript.
 
 **Part One: A Shared Language**
-1. [Chapter 1: From Generated Content to Changing the World](release/en/Generative-and-Embodied-AI-Security.md#chapter-1-from-generated-content-to-changing-the-world)
-2. [Chapter 2 System Structure, Interface Constraints, and the First-Broken Interface](release/en/Generative-and-Embodied-AI-Security.md#chapter-2-system-structure-interface-constraints-and-the-first-broken-interface)
-3. [Chapter 3　Evaluation, Statistics, and Reproduction Boundaries](release/en/Generative-and-Embodied-AI-Security.md#chapter-3　evaluation-statistics-and-reproduction-boundaries)
+1. [Chapter 1: From Generated Content to Changing the World](release/en/Generative-and-Embodied-AI-Security/02-Chapter-1-From-Generated-Content-to-Changing-t.md#chapter-1-from-generated-content-to-changing-the-world)
+2. [Chapter 2 System Structure, Interface Constraints, and the First-Broken Interface](release/en/Generative-and-Embodied-AI-Security/03-Chapter-2-System-Structure-Interface-Constrain.md#chapter-2-system-structure-interface-constraints-and-the-first-broken-interface)
+3. [Chapter 3　Evaluation, Statistics, and Reproduction Boundaries](release/en/Generative-and-Embodied-AI-Security/04-Chapter-3-Evaluation-Statistics-and-Reproducti.md#chapter-3　evaluation-statistics-and-reproduction-boundaries)
 
 **Part II: Language Models and Agents**
-4. [Chapter 4: Instruction Conflicts, Jailbreaking, and Prompt Injection](release/en/Generative-and-Embodied-AI-Security.md#chapter-4-instruction-conflicts-jailbreaking-and-prompt-injection)
-5. [Chapter 5 Retrieval, Context, and Memory](release/en/Generative-and-Embodied-AI-Security.md#chapter-5-retrieval-context-and-memory)
-6. [Chapter 6　Tools, Identity, Execution, and Supply Chain](release/en/Generative-and-Embodied-AI-Security.md#chapter-6　tools-identity-execution-and-supply-chain)
-7. [Chapter 7 Defense in Depth for Language Models](release/en/Generative-and-Embodied-AI-Security.md#chapter-7-defense-in-depth-for-language-models)
+4. [Chapter 4: Instruction Conflicts, Jailbreaking, and Prompt Injection](release/en/Generative-and-Embodied-AI-Security/06-Chapter-4-Instruction-Conflicts-Jailbreaking-a.md#chapter-4-instruction-conflicts-jailbreaking-and-prompt-injection)
+5. [Chapter 5 Retrieval, Context, and Memory](release/en/Generative-and-Embodied-AI-Security/07-Chapter-5-Retrieval-Context-and-Memory.md#chapter-5-retrieval-context-and-memory)
+6. [Chapter 6　Tools, Identity, Execution, and Supply Chain](release/en/Generative-and-Embodied-AI-Security/08-Chapter-6-Tools-Identity-Execution-and-Supply-.md#chapter-6　tools-identity-execution-and-supply-chain)
+7. [Chapter 7 Defense in Depth for Language Models](release/en/Generative-and-Embodied-AI-Security/09-Chapter-7-Defense-in-Depth-for-Language-Models.md#chapter-7-defense-in-depth-for-language-models)
 
 **Part III: Image and Video Generation**
-8. [Chapter 8 Visual Generation Pipelines and Security Assets](release/en/Generative-and-Embodied-AI-Security.md#chapter-8-visual-generation-pipelines-and-security-assets)
-9. [Chapter 9: Data, Models, and the Personalization Supply Chain](release/en/Generative-and-Embodied-AI-Security.md#chapter-9-data-models-and-the-personalization-supply-chain)
-10. [Chapter 10　Conditions, Sampling, Privacy, and Generation Services](release/en/Generative-and-Embodied-AI-Security.md#chapter-10　conditions-sampling-privacy-and-generation-services)
-11. [Chapter 11　Video Spatiotemporal Safety and the Authenticity Chain](release/en/Generative-and-Embodied-AI-Security.md#chapter-11　video-spatiotemporal-safety-and-the-authenticity-chain)
+8. [Chapter 8 Visual Generation Pipelines and Security Assets](release/en/Generative-and-Embodied-AI-Security/11-Chapter-8-Visual-Generation-Pipelines-and-Secu.md#chapter-8-visual-generation-pipelines-and-security-assets)
+9. [Chapter 9: Data, Models, and the Personalization Supply Chain](release/en/Generative-and-Embodied-AI-Security/12-Chapter-9-Data-Models-and-the-Personalization-.md#chapter-9-data-models-and-the-personalization-supply-chain)
+10. [Chapter 10　Conditions, Sampling, Privacy, and Generation Services](release/en/Generative-and-Embodied-AI-Security/13-Chapter-10-Conditions-Sampling-Privacy-and-Gen.md#chapter-10　conditions-sampling-privacy-and-generation-services)
+11. [Chapter 11　Video Spatiotemporal Safety and the Authenticity Chain](release/en/Generative-and-Embodied-AI-Security/14-Chapter-11-Video-Spatiotemporal-Safety-and-the.md#chapter-11　video-spatiotemporal-safety-and-the-authenticity-chain)
 
 **Part IV　Vision–Language–Action Closed Loop**
-12. [Chapter 12　From Seeing to Acting: Closed-Loop Interfaces of Three Model Types](release/en/Generative-and-Embodied-AI-Security.md#chapter-12　from-seeing-to-acting-closed-loop-interfaces-of-three-model-types)
-13. [Chapter 13　Attack Propagation in Observation, Reasoning, and Planning](release/en/Generative-and-Embodied-AI-Security.md#chapter-13　attack-propagation-in-observation-reasoning-and-planning)
-14. [Chapter 14: Actions, Tools, and Physical Consequences: From Proposal to Execution](release/en/Generative-and-Embodied-AI-Security.md#chapter-14-actions-tools-and-physical-consequences-from-proposal-to-execution)
-15. [Chapter 15　Closed-Loop Defense in Depth and Verification](release/en/Generative-and-Embodied-AI-Security.md#chapter-15　closed-loop-defense-in-depth-and-verification)
+12. [Chapter 12　From Seeing to Acting: Closed-Loop Interfaces of Three Model Types](release/en/Generative-and-Embodied-AI-Security/16-Chapter-12-From-Seeing-to-Acting-Closed-Loop-I.md#chapter-12　from-seeing-to-acting-closed-loop-interfaces-of-three-model-types)
+13. [Chapter 13　Attack Propagation in Observation, Reasoning, and Planning](release/en/Generative-and-Embodied-AI-Security/17-Chapter-13-Attack-Propagation-in-Observation-R.md#chapter-13　attack-propagation-in-observation-reasoning-and-planning)
+14. [Chapter 14: Actions, Tools, and Physical Consequences: From Proposal to Execution](release/en/Generative-and-Embodied-AI-Security/18-Chapter-14-Actions-Tools-and-Physical-Conseque.md#chapter-14-actions-tools-and-physical-consequences-from-proposal-to-execution)
+15. [Chapter 15　Closed-Loop Defense in Depth and Verification](release/en/Generative-and-Embodied-AI-Security/19-Chapter-15-Closed-Loop-Defense-in-Depth-and-Ve.md#chapter-15　closed-loop-defense-in-depth-and-verification)
 
 **Part V: World Models and Control**
-16. [Chapter 16: The Four Functional Boundaries of World Models](release/en/Generative-and-Embodied-AI-Security.md#chapter-16-the-four-functional-boundaries-of-world-models)
-17. [Chapter 17　State, Dynamics, and Goal Attacks: How the Imagination Chain Is Hijacked](release/en/Generative-and-Embodied-AI-Security.md#chapter-17　state-dynamics-and-goal-attacks-how-the-imagination-chain-is-hijacked)
-18. [Chapter 18　Runtime Assurance, Recovery, and Falsifiable Testing](release/en/Generative-and-Embodied-AI-Security.md#chapter-18　runtime-assurance-recovery-and-falsifiable-testing)
+16. [Chapter 16: The Four Functional Boundaries of World Models](release/en/Generative-and-Embodied-AI-Security/21-Chapter-16-The-Four-Functional-Boundaries-of-W.md#chapter-16-the-four-functional-boundaries-of-world-models)
+17. [Chapter 17　State, Dynamics, and Goal Attacks: How the Imagination Chain Is Hijacked](release/en/Generative-and-Embodied-AI-Security/22-Chapter-17-State-Dynamics-and-Goal-Attacks-How.md#chapter-17　state-dynamics-and-goal-attacks-how-the-imagination-chain-is-hijacked)
+18. [Chapter 18　Runtime Assurance, Recovery, and Falsifiable Testing](release/en/Generative-and-Embodied-AI-Security/23-Chapter-18-Runtime-Assurance-Recovery-and-Fals.md#chapter-18　runtime-assurance-recovery-and-falsifiable-testing)
 
 **Part Six: Engineering Closed Loop**
-19. [Chapter 19: Cross-Domain Defense-in-Depth Architecture](release/en/Generative-and-Embodied-AI-Security.md#chapter-19-cross-domain-defense-in-depth-architecture)
-20. [Chapter 20 From Threat Model to Operating Institutions](release/en/Generative-and-Embodied-AI-Security.md#chapter-20-from-threat-model-to-operating-institutions)
-21. [Appendix](release/en/Generative-and-Embodied-AI-Security.md#appendix)
-22. [Appendix E — Post-cutoff update (2026-08-09 → 2026-09-26)](release/en/Generative-and-Embodied-AI-Security.md#appendix-e--post-cutoff-update-2026-08-09-→-2026-09-26)
+19. [Chapter 19: Cross-Domain Defense-in-Depth Architecture](release/en/Generative-and-Embodied-AI-Security/25-Chapter-19-Cross-Domain-Defense-in-Depth-Archi.md#chapter-19-cross-domain-defense-in-depth-architecture)
+20. [Chapter 20 From Threat Model to Operating Institutions](release/en/Generative-and-Embodied-AI-Security/26-Chapter-20-From-Threat-Model-to-Operating-Inst.md#chapter-20-from-threat-model-to-operating-institutions)
+21. [Appendix](release/en/Generative-and-Embodied-AI-Security/27-Appendix.md#appendix)
+22. [Appendix E — Post-cutoff update (2026-08-09 → 2026-09-26)](release/en/Generative-and-Embodied-AI-Security/28-Appendix-E-Post-cutoff-update-2026-08-09-2026-.md#appendix-e--post-cutoff-update-2026-08-09-→-2026-09-26)
+23. [Generative and Embodied AI Security](release/en/Generative-and-Embodied-AI-Security/index.md#generative-and-embodied-ai-security)
 
 ## Files and formats
 
 | | Markdown (read on Git) | PDF (download) |
 |---|---|---|
-| **中文** | [生成式与具身智能安全.md](release/zh/生成式与具身智能安全.md) | [330 pp.](release/zh/生成式与具身智能安全.pdf) |
-| **English** | [Generative-and-Embodied-AI-Security.md](release/en/Generative-and-Embodied-AI-Security.md) | [311 pp.](release/en/Generative-and-Embodied-AI-Security.pdf) |
+| **中文** | [生成式与具身智能安全.md](release/zh/生成式与具身智能安全/index.md) | [333 pp.](release/zh/生成式与具身智能安全.pdf) |
+| **English** | [Generative-and-Embodied-AI-Security.md](release/en/Generative-and-Embodied-AI-Security/index.md) | [313 pp.](release/en/Generative-and-Embodied-AI-Security.pdf) |
 
 The PDFs are paginated and carry all 25 figures inline, which makes them the better choice for
 offline reading or printing. The Markdown is the better choice for searching and quoting.
