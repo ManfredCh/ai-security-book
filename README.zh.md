@@ -4,9 +4,9 @@
 
 **当模型不再只回答问题、而是开始行动，安全会发生什么变化。**
 
-<sub>6 部 · 24 章 · 28.0 万汉字 · 426 页 PDF</sub>
+<sub>6 部 · 24 章 · 28.0 万汉字 · 335 页 PDF</sub>
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ·  [![Status](https://img.shields.io/badge/Status-compiled_draft-orange)](#状态与边界)  ·  [![Language](https://img.shields.io/badge/Language-English_%7C_%E4%B8%AD%E6%96%87-blue)](#语言与版本)  ·  [![中文 PDF](https://img.shields.io/badge/PDF_%E4%B8%AD%E6%96%87-426_pp.-red)](release/zh/生成式与具身智能安全.pdf)  ·  [![English PDF](https://img.shields.io/badge/PDF-450_pp.-red)](release/en/Generative-and-Embodied-AI-Security.pdf)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ·  [![Status](https://img.shields.io/badge/Status-compiled_draft-orange)](#状态与边界)  ·  [![Language](https://img.shields.io/badge/Language-English_%7C_%E4%B8%AD%E6%96%87-blue)](#语言与版本)  ·  [![中文 PDF](https://img.shields.io/badge/PDF_%E4%B8%AD%E6%96%87-335_pp.-red)](release/zh/生成式与具身智能安全.pdf)  ·  [![English PDF](https://img.shields.io/badge/PDF-314_pp.-red)](release/en/Generative-and-Embodied-AI-Security.pdf)
 
 [English](README.md) · [简体中文](README.zh.md)
 
@@ -17,6 +17,37 @@
 > — 《韩非子·喻老》
 
 ---
+
+
+<!-- toc:start -->
+<details open>
+<summary><b>目录</b></summary>
+
+- [主题](#主题)
+- [概述](#概述)
+- [文件与格式](#文件与格式)
+- [学习路径](#学习路径)
+  - [路线 A · 三小时拿到全书骨架](#路线-a--三小时拿到全书骨架)
+  - [路线 B · 按方向深入](#路线-b--按方向深入)
+  - [路线 C · 完整精读](#路线-c--完整精读)
+  - [路线 D · 直接拿去用](#路线-d--直接拿去用)
+- [语言与版本](#语言与版本)
+- [仓库结构](#仓库结构)
+- [更新日志](#更新日志)
+  - [v0.2.0 — 2026-09-26](#v020--2026-09-26)
+  - [v0.1.0 — 2026-09-26](#v010--2026-09-26)
+- [截止与后续纳入](#截止与后续纳入)
+  - [截止后发现并已登记的材料（检索于 2026-09-26）](#截止后发现并已登记的材料检索于-2026-09-26)
+- [状态与边界](#状态与边界)
+- [引用](#引用)
+- [参与贡献](#参与贡献)
+- [致谢](#致谢)
+- [星标趋势](#星标趋势)
+- [许可](#许可)
+- [相关仓库](#相关仓库)
+
+</details>
+<!-- toc:end -->
 
 ## 主题
 
@@ -30,10 +61,9 @@
 
 | Language | README | Documents |
 |---|---|---|
-| **简体中文** | 本文件 | 中文原稿，28.0 万汉字，426 页 PDF |
-| **English** | [README.md](README.md) | 英文译本，19.3 万词，450 页 PDF |
+| **简体中文** | 本文件 | 中文原稿，28.0 万汉字，335 页 PDF |
+| **English** | [README.md](README.md) | 英文译本，19.3 万词，314 页 PDF |
 
-[主题](#主题) · [概述](#概述) · [文件](#文件与格式) · [学习路径](#学习路径) · [引用](#引用) · [路线图](#截止与后续纳入) · [许可](#许可) · [贡献](#参与贡献)
 
 ## 概述
 
@@ -56,8 +86,8 @@
 
 | | Markdown（在 Git 上直接读） | PDF（下载看） |
 |---|---|---|
-| **中文** | [生成式与具身智能安全.md](release/zh/生成式与具身智能安全.md) | [426 页](release/zh/生成式与具身智能安全.pdf) |
-| **English** | [Generative-and-Embodied-AI-Security.md](release/en/Generative-and-Embodied-AI-Security.md) | [450 页](release/en/Generative-and-Embodied-AI-Security.pdf) |
+| **中文** | [生成式与具身智能安全.md](release/zh/生成式与具身智能安全.md) | [335 页](release/zh/生成式与具身智能安全.pdf) |
+| **English** | [Generative-and-Embodied-AI-Security.md](release/en/Generative-and-Embodied-AI-Security.md) | [314 页](release/en/Generative-and-Embodied-AI-Security.pdf) |
 
 PDF 已分页并内嵌全部 25 幅图，离线阅读或打印用它；Markdown 便于检索与引用。
 

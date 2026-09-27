@@ -4,6 +4,349 @@
 
 Mingjun Cheng, Vorynel Co.,Ltd
 
+<!-- toc:start -->
+## Contents
+
+  - [Summary](#summary)
+  - [Preface](#preface)
+  - [Reading Notes](#reading-notes)
+  - [The Six Minimal Concepts Needed to Read This Survey](#the-six-minimal-concepts-needed-to-read-this-survey)
+- [Part One: A Shared Language](#part-one-a-shared-language)
+  - [Guide to This Part](#guide-to-this-part)
+- [Chapter 1: From Generated Content to Changing the World](#chapter-1-from-generated-content-to-changing-the-world)
+  - [Chapter Overview](#chapter-overview)
+  - [Foundations: From Probabilistic Mapping to Executable Systems](#foundations-from-probabilistic-mapping-to-executable-systems)
+  - [1.1 "Generation" Has Become a System Interface](#11-generation-has-become-a-system-interface)
+  - [1.2 The four system classes are not a capability ladder](#12-the-four-system-classes-are-not-a-capability-ladder)
+  - [1.3 Five layers of consequence: connecting one sentence of output to real-world harm](#13-five-layers-of-consequence-connecting-one-sentence-of-output-to-real-world-harm)
+  - [1.4 Six security properties](#14-six-security-properties)
+  - [1.5 The Five Risk Amplifiers](#15-the-five-risk-amplifiers)
+  - [1.6 Case: Model Capability and Infrastructure Boundaries Must Be Kept Separate](#16-case-model-capability-and-infrastructure-boundaries-must-be-kept-separate)
+  - [1.7 Worked Example: Drawing a Consequence Chain for a Research Assistant](#17-worked-example-drawing-a-consequence-chain-for-a-research-assistant)
+  - [1.8 Common Misjudgments](#18-common-misjudgments)
+  - [1.9 Bringing It into Real Systems](#19-bringing-it-into-real-systems)
+  - [Summary: The Real Object Is the Capability Chain](#summary-the-real-object-is-the-capability-chain)
+- [Chapter 2 System Structure, Interface Constraints, and the First-Broken Interface](#chapter-2-system-structure-interface-constraints-and-the-first-broken-interface)
+  - [Chapter Overview](#chapter-overview-1)
+  - [Background: Reducing the System to Objects, States, and Interfaces](#background-reducing-the-system-to-objects-states-and-interfaces)
+  - [2.1 Draw the System First, Then Talk About the Model](#21-draw-the-system-first-then-talk-about-the-model)
+  - [2.2 Seven Interface Classes: Where an Attack First Gained Influence It Should Not Have](#22-seven-interface-classes-where-an-attack-first-gained-influence-it-should-not-have)
+  - [2.3 A Complete Threat Record](#23-a-complete-threat-record)
+  - [2.4 Five Layers of Consequence: Where Exactly a Success Succeeds](#24-five-layers-of-consequence-where-exactly-a-success-succeeds)
+  - [2.5 Why Risk Amplifies Along the System](#25-why-risk-amplifies-along-the-system)
+  - [2.6 Worked Example: First-Broken Interface Analysis of a Warehouse Inspection Agent](#26-worked-example-first-broken-interface-analysis-of-a-warehouse-inspection-agent)
+  - [2.7 Common Misjudgments](#27-common-misjudgments)
+  - [2.8 Bringing It into a Real System](#28-bringing-it-into-a-real-system)
+  - [Summary: The Purpose of Classification Is to Locate the Control Entry Point](#summary-the-purpose-of-classification-is-to-locate-the-control-entry-point)
+- [Chapter 3　Evaluation, Statistics, and Reproduction Boundaries](#chapter-3　evaluation-statistics-and-reproduction-boundaries)
+  - [Chapter Overview](#chapter-overview-2)
+  - [Background Principles: From a Single Observation to Usable Evidence](#background-principles-from-a-single-observation-to-usable-evidence)
+  - [3.1 Fix the Sampling Unit First](#31-fix-the-sampling-unit-first)
+  - [3.2 The four-part report: attack, residual risk, utility, and cost](#32-the-four-part-report-attack-residual-risk-utility-and-cost)
+  - [3.3 The attack budget is part of the result](#33-the-attack-budget-is-part-of-the-result)
+  - [3.4 Consequence Layers and Safety Upper Bounds](#34-consequence-layers-and-safety-upper-bounds)
+  - [3.5 Detection Metrics Must Confront Base Rates](#35-detection-metrics-must-confront-base-rates)
+  - [3.6 The Reproduction Ladder: The Scope of Execution Determines the Scope of Conclusions](#36-the-reproduction-ladder-the-scope-of-execution-determines-the-scope-of-conclusions)
+  - [3.7 When Results Can Be Merged](#37-when-results-can-be-merged)
+  - [3.8 Worked Example: Evaluating an Action Gate](#38-worked-example-evaluating-an-action-gate)
+  - [3.9 Common misjudgments](#39-common-misjudgments)
+  - [3.10 Bringing this into real systems](#310-bringing-this-into-real-systems)
+  - [Summary: numbers must carry their measurement context with them](#summary-numbers-must-carry-their-measurement-context-with-them)
+- [Part II: Language Models and Agents](#part-ii-language-models-and-agents)
+  - [Guide to this part](#guide-to-this-part-1)
+- [Chapter 4: Instruction Conflicts, Jailbreaking, and Prompt Injection](#chapter-4-instruction-conflicts-jailbreaking-and-prompt-injection)
+  - [Chapter overview](#chapter-overview-3)
+  - [Background principles: why natural language competes for control](#background-principles-why-natural-language-competes-for-control)
+  - [4.1 Two failures that look the same but are different](#41-two-failures-that-look-the-same-but-are-different)
+  - [4.2 Why jailbreaking evolves from a single sentence into an optimization process](#42-why-jailbreaking-evolves-from-a-single-sentence-into-an-optimization-process)
+  - [4.3 Prompt Injection: When Data Takes Control](#43-prompt-injection-when-data-takes-control)
+  - [4.4 Multimodal Input Widens the Gaps Between Parsers](#44-multimodal-input-widens-the-gaps-between-parsers)
+  - [4.5 From Attack Sentences to Testable Threat Models](#45-from-attack-sentences-to-testable-threat-models)
+  - [4.6 Worked Example: Establishing Control Boundaries for a Procurement Assistant](#46-worked-example-establishing-control-boundaries-for-a-procurement-assistant)
+  - [4.7 Defense Assembly: How Each Layer Fails](#47-defense-assembly-how-each-layer-fails)
+  - [4.8 Case Comparisons Must First Align the Attack Unit](#48-case-comparisons-must-first-align-the-attack-unit)
+  - [4.9 Pre-Launch Checklist for Instruction Boundaries](#49-pre-launch-checklist-for-instruction-boundaries)
+  - [4.10 Common Misjudgments](#410-common-misjudgments)
+  - [4.11 Bringing It into Real Systems](#411-bringing-it-into-real-systems)
+  - [Summary: First Hold the Boundary Between Data and Control](#summary-first-hold-the-boundary-between-data-and-control)
+- [Chapter 5 Retrieval, Context, and Memory](#chapter-5-retrieval-context-and-memory)
+  - [Chapter Overview](#chapter-overview-4)
+  - [Principle Background: How External Knowledge Becomes Current State](#principle-background-how-external-knowledge-becomes-current-state)
+  - [5.1 RAG Is a Data Pipeline, Not a One-Time Prompt Assembly](#51-rag-is-a-data-pipeline-not-a-one-time-prompt-assembly)
+  - [5.2 What Targeted Poisoning and Corpus Extraction Prove](#52-what-targeted-poisoning-and-corpus-extraction-prove)
+  - [5.3 Provenance Must Pass Through Chunking, Summarization, and Reranking](#53-provenance-must-pass-through-chunking-summarization-and-reranking)
+  - [5.4 Long-Term Memory Turns One Input into a State Transition](#54-long-term-memory-turns-one-input-into-a-state-transition)
+  - [5.5 Writing Requires More Conservatism Than Reading](#55-writing-requires-more-conservatism-than-reading)
+  - [5.6 Capability matrix for retrieval and memory attackers](#56-capability-matrix-for-retrieval-and-memory-attackers)
+  - [5.7 Algorithmic order and implementation constraints for secure retrieval](#57-algorithmic-order-and-implementation-constraints-for-secure-retrieval)
+  - [5.8 Memory policy engine and state machine](#58-memory-policy-engine-and-state-machine)
+  - [5.9 Comparable Boundaries of the Four Research Types](#59-comparable-boundaries-of-the-four-research-types)
+  - [5.10 Worked Example: Separating Device Maintenance Knowledge from Personal Memory](#510-worked-example-separating-device-maintenance-knowledge-from-personal-memory)
+  - [5.11 Metrics, Denominators, and Time Windows](#511-metrics-denominators-and-time-windows)
+  - [5.12 RAG and Memory Go-Live Checklist](#512-rag-and-memory-go-live-checklist)
+  - [5.13 Common Misjudgments](#513-common-misjudgments)
+  - [5.14 Bringing It into a Real System](#514-bringing-it-into-a-real-system)
+  - [Summary: State Must Survive with Identity and Provenance](#summary-state-must-survive-with-identity-and-provenance)
+- [Chapter 6　Tools, Identity, Execution, and Supply Chain](#chapter-6　tools-identity-execution-and-supply-chain)
+  - [Chapter Overview](#chapter-overview-5)
+  - [Background: How a Candidate Plan Acquires Real Capability](#background-how-a-candidate-plan-acquires-real-capability)
+  - [6.1 Model Output Is Only a Candidate Capability Request](#61-model-output-is-only-a-candidate-capability-request)
+  - [6.2 Five Capability Gates Turn a Plan into a Restricted Action](#62-five-capability-gates-turn-a-plan-into-a-restricted-action)
+  - [6.3 Identity Is Not a String of Secrets Handed to the Model for Safekeeping](#63-identity-is-not-a-string-of-secrets-handed-to-the-model-for-safekeeping)
+  - [6.4 Execution, network, secrets, and resources are four control planes](#64-execution-network-secrets-and-resources-are-four-control-planes)
+  - [6.5 The supply chain is a joint runtime graph](#65-the-supply-chain-is-a-joint-runtime-graph)
+  - [6.6 Toolchain Threat Model: Who Can Influence Which Step](#66-toolchain-threat-model-who-can-influence-which-step)
+  - [6.7 Computing Minimal Capability from User Goals](#67-computing-minimal-capability-from-user-goals)
+  - [6.8 Fine-Grained Failure Paths of Isolation Implementations](#68-fine-grained-failure-paths-of-isolation-implementations)
+  - [6.9 How Research and Incident Cases Are Used Together](#69-how-research-and-incident-cases-are-used-together)
+  - [6.10 Worked Example: The Minimal Capability Path of a Code-Maintenance Agent](#610-worked-example-the-minimal-capability-path-of-a-code-maintenance-agent)
+  - [6.11 Metrics for Tool and Execution Evaluation](#611-metrics-for-tool-and-execution-evaluation)
+  - [6.12 Checklist for Tools, Identity, and Supply Chain](#612-checklist-for-tools-identity-and-supply-chain)
+  - [6.13 Common Misjudgments](#613-common-misjudgments)
+  - [6.14 Bringing It into Real Systems](#614-bringing-it-into-real-systems)
+  - [Summary: Turn Intelligence into Proposals, Keep Authority in the System](#summary-turn-intelligence-into-proposals-keep-authority-in-the-system)
+- [Chapter 7 Defense in Depth for Language Models](#chapter-7-defense-in-depth-for-language-models)
+  - [Chapter Overview](#chapter-overview-6)
+  - [Background Principles: Depth Comes from the Relay of Different Roots of Trust](#background-principles-depth-comes-from-the-relay-of-different-roots-of-trust)
+  - [7.1 Four Layers of Control Bear Different Responsibilities](#71-four-layers-of-control-bear-different-responsibilities)
+  - [7.2 Locating Defense Contributions with the Conditional Risk Chain](#72-locating-defense-contributions-with-the-conditional-risk-chain)
+  - [7.3 The Launch Gate Is a Multi-Objective Frontier](#73-the-launch-gate-is-a-multi-objective-frontier)
+  - [7.4 Observability Must Cover the Complete Causal Trace](#74-observability-must-cover-the-complete-causal-trace)
+  - [7.5 Case Study: How a Long-Running Agent Passed Through the Gaps Between Boundaries](#75-case-study-how-a-long-running-agent-passed-through-the-gaps-between-boundaries)
+  - [7.6 From Detection to Recovery: A Six-Step Response Closed Loop](#76-from-detection-to-recovery-a-six-step-response-closed-loop)
+  - [7.7 Control Dependency Graph and Common-Cause Failure](#77-control-dependency-graph-and-common-cause-failure)
+  - [7.8 Continuous Verification Rather Than One-Time Acceptance](#78-continuous-verification-rather-than-one-time-acceptance)
+  - [7.9 Deriving Controls from Multiple Classes of Events Rather Than Merging Incident Rates](#79-deriving-controls-from-multiple-classes-of-events-rather-than-merging-incident-rates)
+  - [7.10 Worked Example: Defense-in-Depth Acceptance for an Enterprise Research Agent](#710-worked-example-defense-in-depth-acceptance-for-an-enterprise-research-agent)
+  - [7.11 Operational Metrics and Security Service Objectives](#711-operational-metrics-and-security-service-objectives)
+  - [7.12 Defense-in-Depth Operational Checklist](#712-defense-in-depth-operational-checklist)
+  - [7.13 Common Misjudgments](#713-common-misjudgments)
+  - [7.14 Bringing It into Real Systems](#714-bringing-it-into-real-systems)
+  - [Summary: The Goal of Defense in Depth Is to Make Failures Controllable, Visible, and Recoverable](#summary-the-goal-of-defense-in-depth-is-to-make-failures-controllable-visible-and-recoverable)
+- [Part III: Image and Video Generation](#part-iii-image-and-video-generation)
+  - [Guide to This Part](#guide-to-this-part-2)
+- [Chapter 8 Visual Generation Pipelines and Security Assets](#chapter-8-visual-generation-pipelines-and-security-assets)
+  - [Chapter Overview](#chapter-overview-7)
+  - [Background Principles: Treating Visual Generation as a State-Update Pipeline](#background-principles-treating-visual-generation-as-a-state-update-pipeline)
+  - [8.1 The State Machine Behind a Generate Button](#81-the-state-machine-behind-a-generate-button)
+  - [8.2 How Common Generative Pipeline Combinations Change the Security Object](#82-how-common-generative-pipeline-combinations-change-the-security-object)
+  - [8.3 Video Is Not Many Images](#83-video-is-not-many-images)
+  - [8.4 Vision Systems Protect More Than Content](#84-vision-systems-protect-more-than-content)
+  - [8.5 Research Case: The Same Anomalous Output, Four Different First-Broken Interfaces](#85-research-case-the-same-anomalous-output-four-different-first-broken-interfaces)
+  - [8.6 Engineering Worked Example: Drawing the Safety Boundary for a Creation Platform](#86-engineering-worked-example-drawing-the-safety-boundary-for-a-creation-platform)
+  - [8.7 Quick Reference for Judgment Boundaries](#87-quick-reference-for-judgment-boundaries)
+  - [8.8 Bringing It into a Real System](#88-bringing-it-into-a-real-system)
+  - [Summary: Only by Understanding the State Can We Know Where Control Belongs](#summary-only-by-understanding-the-state-can-we-know-where-control-belongs)
+- [Chapter 9: Data, Models, and the Personalization Supply Chain](#chapter-9-data-models-and-the-personalization-supply-chain)
+  - [Chapter Overview](#chapter-overview-8)
+  - [Background Principles: From a Single File to an Executable Artifact Closure](#background-principles-from-a-single-file-to-an-executable-artifact-closure)
+  - [9.1 Three Supply Chains and One Artifact Closure](#91-three-supply-chains-and-one-artifact-closure)
+  - [9.2 The Data Supply Chain: Clean Pixels Do Not Mean Trustworthy Provenance](#92-the-data-supply-chain-clean-pixels-do-not-mean-trustworthy-provenance)
+  - [9.3 The artifact supply chain: the security object is a composition graph](#93-the-artifact-supply-chain-the-security-object-is-a-composition-graph)
+  - [9.4 Updates and personalization: who has the right to change which parameters](#94-updates-and-personalization-who-has-the-right-to-change-which-parameters)
+  - [9.5 Supply chain gates from ingestion to withdrawal](#95-supply-chain-gates-from-ingestion-to-withdrawal)
+  - [9.6 Engineering Worked Example: Launch Decision for a Model Plugin Marketplace](#96-engineering-worked-example-launch-decision-for-a-model-plugin-marketplace)
+  - [9.7 Quick Reference for Judgment Boundaries](#97-quick-reference-for-judgment-boundaries)
+  - [9.8 Bringing This into Real Systems](#98-bringing-this-into-real-systems)
+  - [Summary: Approve a Closure, Not Trust a Name](#summary-approve-a-closure-not-trust-a-name)
+- [Chapter 10　Conditions, Sampling, Privacy, and Generation Services](#chapter-10　conditions-sampling-privacy-and-generation-services)
+  - [Chapter Overview](#chapter-overview-9)
+  - [Mechanistic groundwork: how one request becomes a stateful generation session](#mechanistic-groundwork-how-one-request-becomes-a-stateful-generation-session)
+  - [10.1 Conditions are a control plane, not just a prompt](#101-conditions-are-a-control-plane-not-just-a-prompt)
+  - [10.2 How semantic search bypasses literal rules](#102-how-semantic-search-bypasses-literal-rules)
+  - [10.3 Video conditions control the trajectory](#103-video-conditions-control-the-trajectory)
+  - [10.4 What sampled outputs may leak](#104-what-sampled-outputs-may-leak)
+  - [10.5 Cache, randomness, and resources are security state](#105-cache-randomness-and-resources-are-security-state)
+  - [10.6 Layered Runtime Controls](#106-layered-runtime-controls)
+  - [10.7 Engineering Worked Example: Four-Gate Acceptance for a Hosted Video Service](#107-engineering-worked-example-four-gate-acceptance-for-a-hosted-video-service)
+  - [10.8 Quick Reference for Judgment Boundaries](#108-quick-reference-for-judgment-boundaries)
+  - [10.9 Bringing It into Real Systems](#109-bringing-it-into-real-systems)
+  - [Summary: Treating a Single Request as a Stateful Control Chain](#summary-treating-a-single-request-as-a-stateful-control-chain)
+- [Chapter 11　Video Spatiotemporal Safety and the Authenticity Chain](#chapter-11　video-spatiotemporal-safety-and-the-authenticity-chain)
+  - [Chapter Overview](#chapter-overview-10)
+  - [Background: From Frame Signals to Events and Handling States](#background-from-frame-signals-to-events-and-handling-states)
+  - [11.1 The Smallest Unit of Video Safety Is the Event](#111-the-smallest-unit-of-video-safety-is-the-event)
+  - [11.2 How time and motion carry attacks](#112-how-time-and-motion-carry-attacks)
+  - [11.3 Audio-Visual Joint Identity](#113-audio-visual-joint-identity)
+  - [11.4 Video Memory, Long-Horizon State, and Usability](#114-video-memory-long-horizon-state-and-usability)
+  - [11.5 Five Categories of Authenticity Signals, Each Answering a Different Question](#115-five-categories-of-authenticity-signals-each-answering-a-different-question)
+  - [11.6 The Authenticity Lifecycle from Generation to Redress](#116-the-authenticity-lifecycle-from-generation-to-redress)
+  - [11.7 Engineering worked example: live digital human launch event](#117-engineering-worked-example-live-digital-human-launch-event)
+  - [11.8 Signal Interpretation Boundaries](#118-signal-interpretation-boundaries)
+  - [11.9 Bringing It into a Real System](#119-bringing-it-into-a-real-system)
+  - [Summary: Authenticity Is an Evidence Chain and an Action Chain](#summary-authenticity-is-an-evidence-chain-and-an-action-chain)
+- [Part IV　Vision–Language–Action Closed Loop](#part-iv　visionlanguageaction-closed-loop)
+  - [Guide to This Part](#guide-to-this-part-3)
+- [Chapter 12　From Seeing to Acting: Closed-Loop Interfaces of Three Model Types](#chapter-12　from-seeing-to-acting-closed-loop-interfaces-of-three-model-types)
+  - [Chapter Overview](#chapter-overview-11)
+  - [Conceptual groundwork: identifying closed-loop roles by input, state, output, and consumer](#conceptual-groundwork-identifying-closed-loop-roles-by-input-state-output-and-consumer)
+  - [12.1 Names cannot replace interface definitions](#121-names-cannot-replace-interface-definitions)
+  - [12.2 The six-layer closed loop and its invariants](#122-the-six-layer-closed-loop-and-its-invariants)
+  - [12.3 An action is not a unitless vector](#123-an-action-is-not-a-unitless-vector)
+  - [12.4 “Seeing right,” “thinking right,” and “acting right” are three separate questions](#124-seeing-right-thinking-right-and-acting-right-are-three-separate-questions)
+  - [12.5 Understanding the closed-loop interface from partial observability](#125-understanding-the-closed-loop-interface-from-partial-observability)
+  - [12.6 How VLA architecture differences change the interface](#126-how-vla-architecture-differences-change-the-interface)
+  - [12.7 Causal Chains and Counterfactual Checks](#127-causal-chains-and-counterfactual-checks)
+  - [12.8 Metrics and Denominators: The Same "Success" May Span Four Objects](#128-metrics-and-denominators-the-same-success-may-span-four-objects)
+  - [12.9 From Interface Inventory to Model Determination](#129-from-interface-inventory-to-model-determination)
+  - [12.10 Quick Reference for Judgment Boundaries](#1210-quick-reference-for-judgment-boundaries)
+  - [12.11 Bringing It into Real Systems](#1211-bringing-it-into-real-systems)
+  - [Summary: First Confirm Who Consumes the Model Output](#summary-first-confirm-who-consumes-the-model-output)
+- [Chapter 13　Attack Propagation in Observation, Reasoning, and Planning](#chapter-13　attack-propagation-in-observation-reasoning-and-planning)
+  - [Chapter Overview](#chapter-overview-12)
+  - [Background Principles: Frozen Variables, First-Broken Location, and Propagation Endpoint](#background-principles-frozen-variables-first-broken-location-and-propagation-endpoint)
+  - [13.1 Find the Optimization Variables First, Then Look at the Attack Carrier](#131-find-the-optimization-variables-first-then-look-at-the-attack-carrier)
+  - [13.2 Supply Chain: The Failure Is Already Locked In Before Deployment](#132-supply-chain-the-failure-is-already-locked-in-before-deployment)
+  - [13.3 Runtime Attack Surface: Observation, Semantics, State, and World Imagination](#133-runtime-attack-surface-observation-semantics-state-and-world-imagination)
+  - [13.4 Composite Paths: Record the First Compromise and Subsequent Propagation Separately](#134-composite-paths-record-the-first-compromise-and-subsequent-propagation-separately)
+  - [13.5 A Verification Fixture for State and Imagination Attacks](#135-a-verification-fixture-for-state-and-imagination-attacks)
+  - [13.6 Adaptive Validation, Physical Feasibility, and Operational Response](#136-adaptive-validation-physical-feasibility-and-operational-response)
+  - [13.7 A Layered Red-Team Protocol](#137-a-layered-red-team-protocol)
+  - [13.8 Quick Reference for Judgment Boundaries](#138-quick-reference-for-judgment-boundaries)
+  - [13.9 Bringing It into a Real System](#139-bringing-it-into-a-real-system)
+  - [Summary: The Propagation Chain Starts with Permissions and Variables](#summary-the-propagation-chain-starts-with-permissions-and-variables)
+- [Chapter 14: Actions, Tools, and Physical Consequences: From Proposal to Execution](#chapter-14-actions-tools-and-physical-consequences-from-proposal-to-execution)
+  - [Chapter Overview](#chapter-overview-13)
+  - [Groundwork: How Action Proposals Obtain Real Execution Authority](#groundwork-how-action-proposals-obtain-real-execution-authority)
+  - [14.1 The Five Semantic Transitions in the Action Chain](#141-the-five-semantic-transitions-in-the-action-chain)
+  - [14.2 Temporal Propagation in Action Generation](#142-temporal-propagation-in-action-generation)
+  - [14.3 Capability Boundaries of Tools, Physical Control, and Feedback](#143-capability-boundaries-of-tools-physical-control-and-feedback)
+  - [14.4 From proxy metrics to physical consequences](#144-from-proxy-metrics-to-physical-consequences)
+  - [14.5 Capability is not a tool name but a constraint token](#145-capability-is-not-a-tool-name-but-a-constraint-token)
+  - [14.6 Mock Execution, Simulation Closed Loops, and Real-World Events](#146-mock-execution-simulation-closed-loops-and-real-world-events)
+  - [14.7 Case Comparison: Single Step, Action Chunks, Generative Dynamics, and Online Takeover](#147-case-comparison-single-step-action-chunks-generative-dynamics-and-online-takeover)
+  - [14.8 Control Deadlines and Harm Windows](#148-control-deadlines-and-harm-windows)
+  - [14.9 Action and Execution Verification Fixtures](#149-action-and-execution-verification-fixtures)
+  - [14.10 Quick Reference for Judgment Boundaries](#1410-quick-reference-for-judgment-boundaries)
+  - [14.11 Bringing It into a Real System](#1411-bringing-it-into-a-real-system)
+  - [Summary: Execution Authority Determines How Far an Error Can Go](#summary-execution-authority-determines-how-far-an-error-can-go)
+- [Chapter 15　Closed-Loop Defense in Depth and Verification](#chapter-15　closed-loop-defense-in-depth-and-verification)
+  - [Chapter Overview](#chapter-overview-14)
+  - [Groundwork: Connecting a Risk Signal to the Control State](#groundwork-connecting-a-risk-signal-to-the-control-state)
+  - [15.1 The Goal of Defense Is to Limit Consequences, Not to Prove the Model Perfect](#151-the-goal-of-defense-is-to-limit-consequences-not-to-prove-the-model-perfect)
+  - [15.2 Six-Layer Defense: From Artifact Admission to Safe Failure](#152-six-layer-defense-from-artifact-admission-to-safe-failure)
+  - [15.3 A Closed-Loop Metric Board That Can Pass Acceptance](#153-a-closed-loop-metric-board-that-can-pass-acceptance)
+  - [15.4 Defense Line Independence Analysis](#154-defense-line-independence-analysis)
+  - [15.5 Formal Interface for Runtime Assurance](#155-formal-interface-for-runtime-assurance)
+  - [15.6 Defense-Aware Attacks](#156-defense-aware-attacks)
+  - [15.7 Denominators and Base Rates for Defense Metrics](#157-denominators-and-base-rates-for-defense-metrics)
+  - [15.8 Recovery Drills: From Alarm to Trusted State](#158-recovery-drills-from-alarm-to-trusted-state)
+  - [15.9 Case Comparison: Training Constraints, Geometric Projection, Detection, and Recovery](#159-case-comparison-training-constraints-geometric-projection-detection-and-recovery)
+  - [15.10 Launch Gates and Validation Fixtures](#1510-launch-gates-and-validation-fixtures)
+  - [15.11 Runtime Observation and Alert Routing](#1511-runtime-observation-and-alert-routing)
+  - [15.12 Selecting Defenses from Hazard Analysis](#1512-selecting-defenses-from-hazard-analysis)
+  - [15.13 Compiling a Layered Validation Plan](#1513-compiling-a-layered-validation-plan)
+  - [15.14 Worked Example: Runtime Assurance for a Ward Delivery Robot](#1514-worked-example-runtime-assurance-for-a-ward-delivery-robot)
+  - [15.15 Six Classes of Misreading of Signals, Numbers, and Averages](#1515-six-classes-of-misreading-of-signals-numbers-and-averages)
+  - [15.16 Bringing It into Real Systems](#1516-bringing-it-into-real-systems)
+  - [Summary: Let Every Safety Signal Have a Control Destination](#summary-let-every-safety-signal-have-a-control-destination)
+- [Part V: World Models and Control](#part-v-world-models-and-control)
+  - [Guide to This Part](#guide-to-this-part-4)
+- [Chapter 16: The Four Functional Boundaries of World Models](#chapter-16-the-four-functional-boundaries-of-world-models)
+  - [Chapter Overview](#chapter-overview-15)
+  - [Grounding the Principle: First Find Who Consumes the Future](#grounding-the-principle-first-find-who-consumes-the-future)
+  - [16.1 The Boundaries of the Four Functions Are Determined Jointly by State and Consumers](#161-the-boundaries-of-the-four-functions-are-determined-jointly-by-state-and-consumers)
+  - [16.2 Understanding Functional Boundary Changes Through Historical Context](#162-understanding-functional-boundary-changes-through-historical-context)
+  - [16.3 Safety Assets Change with the Consumer](#163-safety-assets-change-with-the-consumer)
+  - [16.4 The Four Functional Blocks Inside a World Model](#164-the-four-functional-blocks-inside-a-world-model)
+  - [16.5 Identifiability of States, Observations, Rewards, and Constraints](#165-identifiability-of-states-observations-rewards-and-constraints)
+  - [16.6 Functional Matrix of Six Common Architectures](#166-functional-matrix-of-six-common-architectures)
+  - [16.7 Verification Fixtures for Family Determination](#167-verification-fixtures-for-family-determination)
+  - [16.8 Metrics Vary with Family and Consumer](#168-metrics-vary-with-family-and-consumer)
+  - [16.9 How Product and Project Evidence Supports Functional Classification](#169-how-product-and-project-evidence-supports-functional-classification)
+  - [16.10 Family Selection and Engineering Controls](#1610-family-selection-and-engineering-controls)
+  - [16.11 Sources of Error: Observation Noise, Model Bias, and Objective Bias](#1611-sources-of-error-observation-noise-model-bias-and-objective-bias)
+  - [16.12 Item-by-Item Determination of Boundary Cases](#1612-item-by-item-determination-of-boundary-cases)
+  - [16.13 A Complete Recording Template for Family Classification](#1613-a-complete-recording-template-for-family-classification)
+  - [16.14 Four Minimal Determination Experiments](#1614-four-minimal-determination-experiments)
+  - [16.15 Worked Example: Classifying a Port Digital Twin](#1615-worked-example-classifying-a-port-digital-twin)
+  - [16.16 Six classes of classification misreading caused by names, conditions, and imagery](#1616-six-classes-of-classification-misreading-caused-by-names-conditions-and-imagery)
+  - [16.17 Bringing it into a real system](#1617-bringing-it-into-a-real-system)
+  - [Summary: the model category is decided by the consumer](#summary-the-model-category-is-decided-by-the-consumer)
+- [Chapter 17　State, Dynamics, and Goal Attacks: How the Imagination Chain Is Hijacked](#chapter-17　state-dynamics-and-goal-attacks-how-the-imagination-chain-is-hijacked)
+  - [Chapter overview](#chapter-overview-16)
+  - [Background principle: an attack changes a variable in the imagination chain](#background-principle-an-attack-changes-a-variable-in-the-imagination-chain)
+  - [17.1 Attack paths of the imagination chain](#171-attack-paths-of-the-imagination-chain)
+  - [17.2 Seven Classes of Attack Surface: From Artifact Writes to Feedback Manipulation](#172-seven-classes-of-attack-surface-from-artifact-writes-to-feedback-manipulation)
+  - [17.3 Attack Surface Matrix: Variables, Permissions, Time, and Consumers](#173-attack-surface-matrix-variables-permissions-time-and-consumers)
+  - [17.4 Causal Paths of Supply Chain Attacks](#174-causal-paths-of-supply-chain-attacks)
+  - [17.5 Persistence Testing of Condition and State Attacks](#175-persistence-testing-of-condition-and-state-attacks)
+  - [17.6 Continuous Verification of Rewards, Constraints, and Candidate Ranking](#176-continuous-verification-of-rewards-constraints-and-candidate-ranking)
+  - [17.7 The Role and Boundaries of Automated Attack Search](#177-the-role-and-boundaries-of-automated-attack-search)
+  - [17.8 Verification Fixtures for Compound Attack Chains](#178-verification-fixtures-for-compound-attack-chains)
+  - [17.9 Case Comparison and the Engineering Checklist](#179-case-comparison-and-the-engineering-checklist)
+  - [17.10 Counterfactuals and Causal Attribution](#1710-counterfactuals-and-causal-attribution)
+  - [17.11 Post-Attack State and Artifact Disposition](#1711-post-attack-state-and-artifact-disposition)
+  - [17.12 World Model Red-Team Protocol](#1712-world-model-red-team-protocol)
+  - [17.13 Error Propagation and Control Sensitivity](#1713-error-propagation-and-control-sensitivity)
+  - [17.14 Worked Example: A Contaminated Campus-Scheduling World Model](#1714-worked-example-a-contaminated-campus-scheduling-world-model)
+  - [17.15 Six Misreadings in Which Symptoms Cannot Substitute for the First-Broken Variable](#1715-six-misreadings-in-which-symptoms-cannot-substitute-for-the-first-broken-variable)
+  - [17.16 Bringing This into Real Systems](#1716-bringing-this-into-real-systems)
+  - [Summary: Imagination Errors Become Control Risk Only When Consumed](#summary-imagination-errors-become-control-risk-only-when-consumed)
+- [Chapter 18　Runtime Assurance, Recovery, and Falsifiable Testing](#chapter-18　runtime-assurance-recovery-and-falsifiable-testing)
+  - [Chapter Overview](#chapter-overview-17)
+  - [Background Principles: Predictions Must Pass Through Anchoring, Gating, and Replanning](#background-principles-predictions-must-pass-through-anchoring-gating-and-replanning)
+  - [18.1 The Five Classes of Defensive Action Must Each Fulfill Their Own Role](#181-the-five-classes-of-defensive-action-must-each-fulfill-their-own-role)
+  - [18.2 Prediction and State Assurance](#182-prediction-and-state-assurance)
+  - [18.3 Execution and Recovery Assurance](#183-execution-and-recovery-assurance)
+  - [18.4 A Falsifiable Test Matrix](#184-a-falsifiable-test-matrix)
+  - [18.5 The Evidence Ladder: You Only Prove What You Ran](#185-the-evidence-ladder-you-only-prove-what-you-ran)
+  - [18.6 From Claim to Evidence: Writing a Reviewable Assurance Argument](#186-from-claim-to-evidence-writing-a-reviewable-assurance-argument)
+  - [18.7 Calibration Requirements: Coverage Has a Denominator and Failure Conditions](#187-calibration-requirements-coverage-has-a-denominator-and-failure-conditions)
+  - [18.8 The Assumption Ledger for Robust Control](#188-the-assumption-ledger-for-robust-control)
+  - [18.9 Independent Verification and Common-Cause Failure](#189-independent-verification-and-common-cause-failure)
+  - [18.10 Verification Fixtures: From Array Branches to Controlled Physical Actions](#1810-verification-fixtures-from-array-branches-to-controlled-physical-actions)
+  - [18.11 The Recovery State Machine and Fault Drills](#1811-the-recovery-state-machine-and-fault-drills)
+  - [18.12 Case Comparison: One Defense Does Not Cover All First-Broken Interfaces](#1812-case-comparison-one-defense-does-not-cover-all-first-broken-interfaces)
+  - [18.13 Release Gate: From Control Rules to Runbook](#1813-release-gate-from-control-rules-to-runbook)
+  - [18.14 Residual Risk, Utility, and the Assurance Budget](#1814-residual-risk-utility-and-the-assurance-budget)
+  - [18.15 Worked Example: Runtime Assurance for an Automated Yard](#1815-worked-example-runtime-assurance-for-an-automated-yard)
+  - [18.16 Six Misreadings About Scores, Algorithm Names, and Local Runs](#1816-six-misreadings-about-scores-algorithm-names-and-local-runs)
+  - [18.17 Bringing This into Real Systems](#1817-bringing-this-into-real-systems)
+  - [Summary: Assurance Claims Must Be Able to Fail, Intervene, and Recover](#summary-assurance-claims-must-be-able-to-fail-intervene-and-recover)
+- [Part Six: Engineering Closed Loop](#part-six-engineering-closed-loop)
+  - [Guide to This Part](#guide-to-this-part-5)
+- [Chapter 19: Cross-Domain Defense-in-Depth Architecture](#chapter-19-cross-domain-defense-in-depth-architecture)
+  - [Chapter Overview](#chapter-overview-18)
+  - [Background Principles: The Data Plane Runs Tasks, the Control Plane Constrains Capability](#background-principles-the-data-plane-runs-tasks-the-control-plane-constrains-capability)
+  - [19.1 From Defense Checklists to a Control Plane](#191-from-defense-checklists-to-a-control-plane)
+  - [19.2 Provenance and Artifacts: Visible Does Not Mean Trustworthy](#192-provenance-and-artifacts-visible-does-not-mean-trustworthy)
+  - [19.3 Identity and Purpose Must Flow with the Data](#193-identity-and-purpose-must-flow-with-the-data)
+  - [19.4 State Writes Are an Independent High-Risk Action](#194-state-writes-are-an-independent-high-risk-action)
+  - [19.5 A Plan Cannot Issue Permissions for Itself](#195-a-plan-cannot-issue-permissions-for-itself)
+  - [19.6 Isolation and Budgets Must Be Accepted with Probes](#196-isolation-and-budgets-must-be-accepted-with-probes)
+  - [19.7 Unified traces: letting the system explain a single action](#197-unified-traces-letting-the-system-explain-a-single-action)
+  - [19.8 Recovery is part of the architecture](#198-recovery-is-part-of-the-architecture)
+  - [19.9 Worked Example: A Multimodal Procurement Agent](#199-worked-example-a-multimodal-procurement-agent)
+  - [19.10 Five Common-Cause Misreadings of the Shared Services](#1910-five-common-cause-misreadings-of-the-shared-services)
+  - [19.11 Bringing It into an Actual System](#1911-bringing-it-into-an-actual-system)
+  - [Summary: What Is Shared Is Control, Not Model Assumptions](#summary-what-is-shared-is-control-not-model-assumptions)
+- [Chapter 20 From Threat Model to Operating Institutions](#chapter-20-from-threat-model-to-operating-institutions)
+  - [Chapter Overview](#chapter-overview-19)
+  - [Background Principles: Evidence Expires as Dependencies Change](#background-principles-evidence-expires-as-dependencies-change)
+  - [20.1 The Minimal Security Argument](#201-the-minimal-security-argument)
+  - [20.2 Step One: Freeze the Scope and the Change Units](#202-step-one-freeze-the-scope-and-the-change-units)
+  - [20.3 Step Two: Generating a Test Matrix from the Threat Record](#203-step-two-generating-a-test-matrix-from-the-threat-record)
+  - [20.4 Step Three: Dividing Work Between Hard Gates and Diagnostic Scores](#204-step-three-dividing-work-between-hard-gates-and-diagnostic-scores)
+  - [20.5 Step Four: Continuously Monitor the Real Control Objectives](#205-step-four-continuously-monitor-the-real-control-objectives)
+  - [20.6 Step Five: Incident Response Proceeds in Three Phases](#206-step-five-incident-response-proceeds-in-three-phases)
+  - [20.7 Step Six: Turning Open Questions into Falsifiable Plans](#207-step-six-turning-open-questions-into-falsifiable-plans)
+  - [20.8 Worked Example: How a Version Change Passes the Gate](#208-worked-example-how-a-version-change-passes-the-gate)
+  - [20.9 Release Checklist](#209-release-checklist)
+  - [20.10 Five Misreadings of a Single Pass, Zero Incidents, and an Overall Score](#2010-five-misreadings-of-a-single-pass-zero-incidents-and-an-overall-score)
+  - [20.11 Bringing It into a Real System](#2011-bringing-it-into-a-real-system)
+  - [Conclusion: Keeping Errors Within What the System Can Bear](#conclusion-keeping-errors-within-what-the-system-can-bear)
+- [Appendix](#appendix)
+  - [Appendix A Minimal Safety Argument Template](#appendix-a-minimal-safety-argument-template)
+  - [Appendix B Threat Record Template](#appendix-b-threat-record-template)
+  - [Appendix C Four-Part Test Record](#appendix-c-four-part-test-record)
+  - [Appendix D Chinese-English terminology and neighboring concepts](#appendix-d-chinese-english-terminology-and-neighboring-concepts)
+- [Appendix E — Post-cutoff update (2026-08-09 → 2026-09-26)](#appendix-e--post-cutoff-update-2026-08-09-→-2026-09-26)
+  - [E.1 — The OpenAI–Hugging Face incident: official report and disclosure process now exist](#e1--the-openaihugging-face-incident-official-report-and-disclosure-process-now-exist)
+  - [E.2 — Other new events (brief record)](#e2--other-new-events-brief-record)
+  - [E.3 — How to use this appendix](#e3--how-to-use-this-appendix)
+<!-- toc:end -->
+
 ## Summary
 
 A model that only generates a passage of text keeps its security problems largely at the level of content. When its outputs enter retrieval, long-term memory, media publishing, software tools, robot actuators and world-model closed loops, errors may then acquire state, identity and real-world capability. This survey is organized around one unified chain of questions. Where does untrusted input first cross a trust boundary? How does an attack propagate from data to state, plans, actions and feedback? How do defenses establish independent, verifiable and recoverable controls outside the model?
@@ -166,7 +509,7 @@ External input \(x\) is parsed into context or conditions \(c\). The model produ
 
 When reading the figure, first follow the main arrows. Point out item by item each landmark, in order: the external input, the parsing result, the model output, the candidate plan, the independent authorization, the actual execution, and the environmental feedback. Then check the consumer and the rejection point of each edge. Two points deserve particular attention. Distinguish "the model proposes an action" from "the authorizer permits an action." Watch how environmental feedback becomes the next round of state. Those two points settle a further question: does content risk escalate into real-world side effects, and does a single deviation accumulate in the closed loop?
 
-![Seven boxes connect in sequence from external input to parsing, model output, candidate plan, independent authorization, execution, and the environment, and then return to feedback and a new state.](../figures/generated/fig-01-01-capability-chain.pdf "Distinguish data, plans, permissions, execution, and feedback along the arrows; model outputs change real-world state only after external authorization and an actuator."){#fig:ch01-capability-chain width=94%}
+![Seven boxes connect in sequence from external input to parsing, model output, candidate plan, independent authorization, execution, and the environment, and then return to feedback and a new state.](../figures/fig-01-01-capability-chain.png "Distinguish data, plans, permissions, execution, and feedback along the arrows; model outputs change real-world state only after external authorization and an actuator."){#fig:ch01-capability-chain width=94%}
 
 The figure makes one conclusion most important. Between candidate plans and execution there must be an authorization transition outside the model. Feedback must return with provenance and state identity. What the figure provides is a generic capability chain, not the complete architecture of any product. Without tool acceptance, an environmental receipt, or independent observation, the evidence ceiling remains at output or plan reachability. The potential path along the arrows has not yet become an execution that occurred and real-world harm.
 
@@ -201,7 +544,7 @@ Large language models (LLMs), visual generation, vision-language-action model (V
 
 When reading the figure, compare the four swimlanes horizontally rather than inferring a capability hierarchy from top to bottom. For each swimlane, locate the raw input, the internal process, the direct output, and the downstream consumer separately. Then ask what the consumer does with the output. Does it treat the output as information, as a basis for decisions, or as an execution parameter? A final comparison: why does the same structured output, once it enters different consumers, lead to different security endpoints such as content, control, publication, or physical action?
 
-![Four horizontal swimlanes showing the input, internal process, output, and consumer of the language model, visual generation, vision-language-action system, and world model, respectively.](../figures/generated/fig-01-02-four-system-roles.pdf "A model name does not directly determine risk; only when the same output is combined with the downstream consumer can one judge whether it is information, decision input, or an execution parameter."){#fig:ch01-four-system-roles width=94%}
+![Four horizontal swimlanes showing the input, internal process, output, and consumer of the language model, visual generation, vision-language-action system, and world model, respectively.](../figures/fig-01-02-four-system-roles.png "A model name does not directly determine risk; only when the same output is combined with the downstream consumer can one judge whether it is information, decision input, or an execution parameter."){#fig:ch01-four-system-roles width=94%}
 
 The figure supports classification by interface role rather than by product name. System families can be combined, and the same model can also have a different blast radius as its consumers change. Its boundary is this: the figure does not represent every cache, adapter, low-level controller, and publication channel of each implementation. Engineering review must still complete the swimlanes with the real deployment diagram, execution identity, and receipts. Permissions and real-world consequences cannot be read directly off "belonging to a certain class of model."
 
@@ -459,7 +802,7 @@ This survey divides the end-to-end chain into seven interface classes. They are 
 
 U0 through U6 describe interfaces at which the nature of trust changes. They are not levels of model maturity or severity. When reading the figure, first mark on a concrete attack chain the position at which a low-trust object first gains unauthorized influence. Then mark separately the state interface that makes the influence persistent, the feedback interface that helps the attack adjust, and the authorization or release interface that ultimately allows real-world side effects. The same event can leave evidence at multiple layers, but the first-broken label can be determined only on the basis of the first boundary crossing.
 
-![A seven-layer vertical structure running from data and artifacts all the way to release and downstream, with each layer labeled with one U0 to U6 interface.](../figures/generated/fig-02-01-system-trust-interfaces.pdf "U0—U6 denote interfaces at which the nature of trust changes, not levels classified by model type; the first-broken interface is the position at which an attack first crosses the intended boundary."){#fig:ch02-trust-interfaces width=94%}
+![A seven-layer vertical structure running from data and artifacts all the way to release and downstream, with each layer labeled with one U0 to U6 interface.](../figures/fig-02-01-system-trust-interfaces.png "U0—U6 denote interfaces at which the nature of trust changes, not levels classified by model type; the first-broken interface is the position at which an attack first crosses the intended boundary."){#fig:ch02-trust-interfaces width=94%}
 
 The figure unifies control entries into an interface language, so that different models and substrates can share threat records. It does not imply that an attack necessarily passes through all layers one by one, nor that U6 is more dangerous than U1. If the logs prove only that the model generated a candidate plan, the highest evidence still stops at the corresponding output or control layer. One must not infer that those interfaces have already been breached merely because the figure also depicts execution and downstream interfaces. Real systems still need to instantiate each layer by component, identity, and timestamp.
 
@@ -675,7 +1018,7 @@ On 36 real applications, HOUYI tested black-box prompt injection; 31 of them wer
 
 When reading the figure, pick a striking percentage. Check the sampling unit, the success condition, the attack budget, and the evidence level, working backward from the original observation. At the far right, write the decision that truly consumes the result. If any cell is missing, try to state how the omission would change the denominator, the outcome, or the limits of the conclusion. Check in particular how error responses are encoded. Also check whether the same observation can independently support the three decisions of different strength—release, deployment, and risk acceptance.
 
-![Seven boxes show the original observation passing through the sampling unit, the success condition, the attack budget, four-part metrics, and evidence levels before entering an engineering decision.](../figures/generated/fig-03-01-measurement-evidence-stack.pdf "Only when a percentage is bound simultaneously to the sampling unit, the success condition, the attack budget, and the evidence level can it enter a release or risk acceptance decision."){#fig:ch03-measurement-evidence width=94%}
+![Seven boxes show the original observation passing through the sampling unit, the success condition, the attack budget, four-part metrics, and evidence levels before entering an engineering decision.](../figures/fig-03-01-measurement-evidence-stack.png "Only when a percentage is bound simultaneously to the sampling unit, the success condition, the attack budget, and the evidence level can it enter a release or risk acceptance decision."){#fig:ch03-measurement-evidence width=94%}
 
 The figure presents the measurement evidence stack. Each layer constrains what the next layer may say, yet none automatically guarantees that the metric is valid or that the sample is representative. The stack can help reveal gaps in statistical definitions and run scope, but a complete process alone cannot prove scientific correctness. If execution reaches only static inspection or a simulated environment, the conclusion must retain the corresponding limits, even if the results table already contains the four-part metrics and complete percentages.
 
@@ -996,7 +1339,7 @@ Two diagnostic questions allow rapid classification. First, does the attacker wa
 
 When reading the figure, follow the upper and lower lanes separately to identify the attacker-controlled input, the altered security objective, the model's direct output and the downstream consumer. The upper lane focuses on checking whether the model lets restricted content through. The lower lane focuses on checking whether low-trust data changes the application task or control flow. Then judge whether the two paths can converge in the same case, and whether, after convergence, an independent action authorization still blocks execution.
 
-![The upper and lower lanes show, respectively, the path of jailbreaking from an attack prompt to improper output, and the path of prompt injection from low-trust data to task deviation.](../figures/generated/fig-04-01-jailbreak-versus-injection.pdf "Jailbreaking mainly changes whether the model outputs restricted content; prompt injection mainly changes the application's originally intended task or control flow; the two can be combined but cannot replace each other."){#fig:ch04-jailbreak-injection width=94%}
+![The upper and lower lanes show, respectively, the path of jailbreaking from an attack prompt to improper output, and the path of prompt injection from low-trust data to task deviation.](../figures/fig-04-01-jailbreak-versus-injection.png "Jailbreaking mainly changes whether the model outputs restricted content; prompt injection mainly changes the application's originally intended task or control flow; the two can be combined but cannot replace each other."){#fig:ch04-jailbreak-injection width=94%}
 
 The figure supports recording jailbreaking and prompt injection separately by security objective, and allows combined labels. It does not claim that a model output appearing along either path equals tool execution. Content policy can handle part of the upper endpoints. Task integrity and parameter authorization still have to be verified in the lower lane and at the action boundary. If an experiment saves only the answer text, it can evaluate only the corresponding content or control deviation. It cannot use that text to confirm outbound sending, payment or other real-world side effects.
 
@@ -1287,7 +1630,7 @@ At least four different classes of failure run along this chain. **Content poiso
 
 To read the figure, follow the upper retrieval-augmented generation swimlane through ingestion, indexing, retrieval, reranking, and context assembly. The lower long-term memory swimlane covers observation, writing, cross-session saving, recall, and use. When comparing the two paths, highlight who holds read rights and who holds write rights. Note also at which step provenance, tenant, purpose, and deletion status may be lost. "Entering the current context" belongs to the read path of a single request. "Being written as future state" is the cross-session persistence path.
 
-![Two swimlanes respectively show the data pipeline of retrieval-augmented generation and the state pipeline of long-term memory from observation and writing to future recall.](../figures/generated/fig-05-01-rag-memory-pipeline.pdf "RAG sends external knowledge into the current context, while long-term memory writes one observation as future state; the two paths need separate control of reads and writes."){#fig:ch05-rag-memory width=94%}
+![Two swimlanes respectively show the data pipeline of retrieval-augmented generation and the state pipeline of long-term memory from observation and writing to future recall.](../figures/fig-05-01-rag-memory-pipeline.png "RAG sends external knowledge into the current context, while long-term memory writes one observation as future state; the two paths need separate control of reads and writes."){#fig:ch05-rag-memory width=94%}
 
 According to the figure, RAG and long-term memory share the problems of provenance and access control. Their state semantics and test endpoints differ. The figure does not mean that a retrieval hit necessarily leads to model adoption. Nor does it mean that a successful write will necessarily be recalled in the future. Hits, adoption, writes, recall, action propagation, and deletion effectiveness all need their own logs and denominators. Without actual recall evidence from a future session, the available evidence confirms only that the record can be written. Whether the persistent attack takes effect remains unknown.
 
@@ -1629,7 +1972,7 @@ A traceable runtime harness can set up five gates in sequence. Each gate answers
 
 Read the figure starting from the user task and the model's candidate plan. Then check the tool interface, execution identity, parameter policy, isolation, and resource budget in order, and look last for a real execution receipt. At each box, ask once "who consumed the previous step's output, and what new trusted judgment was added." A step still self-approved by the same model on the basis of the same context is a shared failure source, not an independent capability gate.
 
-![Seven boxes run from the user task and model plan through the tool interface, identity purpose, parameter consequences, and isolation budget, and finally to the execution receipt.](../figures/generated/fig-06-01-agent-capability-gates.pdf "A tool call is not a natural extension of the model's output string; the interface, identity, parameter policy, isolation, and budget turn a candidate plan into a restricted action in sequence."){#fig:ch06-capability-gates width=94%}
+![Seven boxes run from the user task and model plan through the tool interface, identity purpose, parameter consequences, and isolation budget, and finally to the execution receipt.](../figures/fig-06-01-agent-capability-gates.png "A tool call is not a natural extension of the model's output string; the interface, identity, parameter policy, isolation, and budget turn a candidate plan into a restricted action in sequence."){#fig:ch06-capability-gates width=94%}
 
 The figure emphasizes that a candidate plan must pass through several judgments of different kinds. Only an execution receipt can confirm that the action actually occurred. It is not a product checklist that is safe merely by being chained in sequence. Each gate still needs to be bound to a specific object, version, and failure semantics. Isolation must be verified separately for processes, network, secrets, and resources. If the evidence reaches only tool acceptance or simulated execution, the conclusion must stop at the corresponding level. The rightmost receipt box must not be used to infer real-world side effects.
 
@@ -1914,7 +2257,7 @@ The fourth layer is **operational governance and response**. Signed supply chain
 
 When you read the figure, trace one and the same attack scenario bottom-up or top-down. For each layer — model, information flow, capability, operations — write out separately the conditional probabilities and the evidence that it changes. Then check the root of trust behind each layer. Does it depend on the same model, the same context, the same policy release chain, or the same long-lived identity? For every control, mark the next denial point and who owns recovery after a failure. Do not merely count how many controls there are.
 
-![Four-layer vertical structure from the model layer to the operations layer, with each layer listing the security controls it owns.](../figures/generated/fig-07-01-llm-defense-depth.pdf "The four layers of control respectively change output tendency, information elevation, real-world capability, and post-failure handling; duplicated controls that share the same root of trust do not automatically form depth."){#fig:ch07-defense-depth width=94%}
+![Four-layer vertical structure from the model layer to the operations layer, with each layer listing the security controls it owns.](../figures/fig-07-01-llm-defense-depth.png "The four layers of control respectively change output tendency, information elevation, real-world capability, and post-failure handling; duplicated controls that share the same root of trust do not automatically form depth."){#fig:ch07-defense-depth width=94%}
 
 The figure supports grouping defenses by responsibility and root of trust. When one layer fails, the others should still limit propagation on their own or shorten recovery time. It does not mean that the four layers are equally strong, and a control is not verified merely because it exists. Shared configuration, shared identity or shared models cause common-cause failures. Only operational tests and incident receipts can prove that a layer functions in the target environment. The structural diagram itself can prove at most that the control design and the expected responsibilities have been expressed explicitly.
 
@@ -2243,7 +2586,7 @@ This table also reveals a common error. A model file can hash correctly and stil
 
 The figure shows five swimlanes. Read them from input to output. Treat them as five common pipeline configurations, not five mutually exclusive categories. Begin by comparing what each configuration preserves: the adversarial training relationship, the generation history, the stepwise denoising state, the compressed latent variables, or the continuous velocity field. Then separate the three orthogonal dimensions of representation space, generative backbone, and update rule. Note in particular that latent-space diffusion is a combination of representation space and diffusion updates. Note also that DiT is a backbone, one that can be combined with processes such as diffusion. Finally, for each swimlane, identify one observable version field, cache, or abort location.
 
-![Five swimlanes compare common pipeline combinations such as adversarial generation, autoregressive sequences, pixel-space diffusion, latent-space diffusion, and flow-matching continuous flow, and list the three orthogonal dimensions of representation space, update rule, and model backbone at the bottom.](../figures/generated/fig-08-01-visual-generation-families.pdf "The five swimlanes are common pipeline combinations, not mutually exclusive algorithm categories; security analysis should record representation space, update rule, and model backbone separately."){#fig:ch08-visual-generation-families width=94%}
+![Five swimlanes compare common pipeline combinations such as adversarial generation, autoregressive sequences, pixel-space diffusion, latent-space diffusion, and flow-matching continuous flow, and list the three orthogonal dimensions of representation space, update rule, and model backbone at the bottom.](../figures/fig-08-01-visual-generation-families.png "The five swimlanes are common pipeline combinations, not mutually exclusive algorithm categories; security analysis should record representation space, update rule, and model backbone separately."){#fig:ch08-visual-generation-families width=94%}
 
 Figure 8-1 supports comparison across several common pipeline configurations, along the lines of “input — intermediate process — output — key state.” It also shows that the same final image may undergo different state updates. The swimlanes in the figure are configuration examples provided for the reader's observation. They do not constitute a complete, mutually exclusive, or same-level classification of generative mechanisms. They do not support ranking methods by security according to the number of swimlanes. Nor can they prove that any specific product fully implements the modules in the figure. Judging a product still requires checking representation space, generative backbone, training construction, update rule, and conditioning interface one by one. It must rest on the combination actually loaded and on runtime probes.
 
@@ -2309,7 +2652,7 @@ Here \(h_t\) is the cross-frame generation state and \(k_t\) is the camera or sh
 
 In the figure, first compare the single-shot spatial object of the image swimlane with the persistent spatiotemporal object of the video swimlane. Then identify the motion, identity continuity, audio-visual synchronization and streaming state that appear only on the video side. Finally, judge which of these nodes frame-by-frame detection can cover and which cross-frame relations it will miss. Choose the observation unit — window, event or whole video — accordingly.
 
-![Two swimlanes compare the single-shot spatial generation of images with the spatiotemporally coupled generation of video.](../figures/generated/fig-08-02-image-video-state.pdf "The video security object includes duration, motion, identity continuity, audio-visual synchronization, and streaming state, and frame-by-frame image review can cover only part of it."){#fig:ch08-image-video-state width=94%}
+![Two swimlanes compare the single-shot spatial generation of images with the spatiotemporally coupled generation of video.](../figures/fig-08-02-image-video-state.png "The video security object includes duration, motion, identity continuity, audio-visual synchronization, and streaming state, and frame-by-frame image review can cover only part of it."){#fig:ch08-image-video-state width=94%}
 
 Figure 8-2 supports one mechanistic judgment: “video cannot be reduced to frame-by-frame image review”. Temporal order and cross-frame state produce observables that no single frame has. The figure does not deny the local value of frame-level detection. A structural diagram alone cannot establish that a given video attack exists. Whether identity drift, short-lived events or cache pollution exist still needs to be verified under a fixed clip length, frame rate and model version.
 
@@ -2535,7 +2878,7 @@ Here \(D\) is the training and update data lineage, and \(V\) is all artifacts a
 
 Start from the actual loaded composition at the center of the figure and examine the six classes of components around it. Confirm which objects jointly determine the behavior fingerprint. Note in particular that the sampling configuration and the security components are not footnotes to the main model.
 
-![Six components are arranged around the actual loaded composition, with arrows pointing to the behavior fingerprint at the center.](../figures/generated/fig-09-01-artifact-closure.pdf "Production behavior is determined by the jointly loaded model, adapter, encoder, sampler, security components, and configuration; approving a single file cannot replace composition testing."){#fig:ch09-artifact-closure width=94%}
+![Six components are arranged around the actual loaded composition, with arrows pointing to the behavior fingerprint at the center.](../figures/fig-09-01-artifact-closure.png "Production behavior is determined by the jointly loaded model, adapter, encoder, sampler, security components, and configuration; approving a single file cannot replace composition testing."){#fig:ch09-artifact-closure width=94%}
 
 Figure 9-1 supports one reading: the model, adapter, encoder, sampler, security components and configuration form a single replayable approval object. It also supports a composition re-review when any node changes. It does not prove that the components arranged around the center are independent of one another. It proves even less that listing all components makes the system safe. Actual execution records and differential probes still need to confirm dependencies, load order, permissions and dynamic behavior.
 
@@ -2863,7 +3206,7 @@ The four gates may use different denominators. Take 100 inputs: 80 enter the que
 
 Follow the figure from user and reference conditions through to the publishing cache. Mark out where condition encoding, generation state, sampling, filtering, content provenance and processing history, and permission checks each produce or consume state.
 
-![Seven boxes pass from user and reference conditions through encoding, generation, sampling, filtering, and provenance signals to the publishing cache.](../figures/generated/fig-10-01-condition-sampling-service.pdf "Runtime security checks not only the prompt but also observes condition encoding, random seeds, sampling state, filters, provenance records, cache keys, and publishing permissions."){#fig:ch10-condition-sampling-service width=94%}
+![Seven boxes pass from user and reference conditions through encoding, generation, sampling, filtering, and provenance signals to the publishing cache.](../figures/fig-10-01-condition-sampling-service.png "Runtime security checks not only the prompt but also observes condition encoding, random seeds, sampling state, filters, provenance records, cache keys, and publishing permissions."){#fig:ch10-condition-sampling-service width=94%}
 
 Figure 10-1 supports bringing random seeds, sampling state, filters, content provenance and processing history, cache keys and publishing permissions beyond prompt review into the run record of the same request. It also supports setting an independent denominator for each stage. It does not prove that the filtering or provenance signals in the figure suffice to block risk, and structural connectivity does not equal effective control. Each gate still needs verification with allow, deny, expiry, cross-tenant and recovery probes.
 
@@ -3196,7 +3539,7 @@ Adjacent frames are highly correlated. A 10-second clip at 30 fps does not natur
 
 Read the figure from the top downward, level by level: frames, then segments, then whole videos, then events. Compare the temporal and causal context that each level adds. Judge which level the study denominator should rest on. Now suppose the same video is cut into ten segments. Which counts can increase, and which independent units remain only one? Answering that keeps correlated observations from passing as new samples.
 
-![A four-level structure from frames to segments to whole videos to events, adding temporal and causal context at each level.](../figures/generated/fig-11-01-video-event-units.pdf "Frames, segments, videos, and events answer different questions; treating the frames of the same video as independent samples inflates the amount of evidence."){#fig:ch11-video-event-units width=94%}
+![A four-level structure from frames to segments to whole videos to events, adding temporal and causal context at each level.](../figures/fig-11-01-video-event-units.png "Frames, segments, videos, and events answer different questions; treating the frames of the same video as independent samples inflates the amount of evidence."){#fig:ch11-video-event-units width=94%}
 
 Figure 11-1 supports one separation: frame-level algorithmic observations on one side, segment-, video-, and event-level conclusions on the other. It also shows directly that frames within the same video should not be treated as independent population samples. This is the minimal four-level figure for reading the statistical units. It does not negate the diagnostic units used in the main text, such as windows, shots, and identity. Nor may the hierarchy be read as proof that a given detector already covers all event types. The same applies to livestream latency.
 
@@ -3589,7 +3932,7 @@ VLM, VLA and WAM do not form a simple capability hierarchy. One system may inter
 
 Work through the three kinds of components row by row, comparing inputs, internal mechanisms, outputs and consumers. Check in particular whether the "future frames" really enter action generation or candidate ranking, rather than being only for humans to watch. For each row, then indicate whether the output stops at content, at an action proposal or at a planning basis. Name the next interface that grants it higher authority.
 
-![Three swimlanes list the inputs, mechanisms, outputs, and consumers of the vision–language model, the vision–language–action model, and the world action model.](../figures/generated/fig-12-01-vlm-vla-wam-roles.pdf "The category is jointly determined by actual inputs, outputs, and consumers; product names or whether a language module is included cannot replace interface judgment."){#fig:ch12-vlm-vla-wam-roles width=94%}
+![Three swimlanes list the inputs, mechanisms, outputs, and consumers of the vision–language model, the vision–language–action model, and the world action model.](../figures/fig-12-01-vlm-vla-wam-roles.png "The category is jointly determined by actual inputs, outputs, and consumers; product names or whether a language module is included cannot replace interface judgment."){#fig:ch12-vlm-vla-wam-roles width=94%}
 
 Figure 12-1 backs a distinction among the three kinds of roles that rests on executable interfaces. The same visual input ends at different safety endpoints, because its outputs and consumers differ. The figure does not imply that the three kinds of components must be deployed as three separate models. Category names alone support no inference about capability strength or real-world consequences. For a joint network, every consumption path still has to be confirmed through actual tensors, APIs, control messages and permission gates.
 
@@ -3614,7 +3957,7 @@ Future prediction opens one more bypass. At L2 a WAM may generate multiple candi
 
 Follow the circular arrows from the environment observation to the actuators, then bring the execution result back to the environment. At each node, ask who writes the state. When does an action attain authority? Does the next round use fresh feedback? Now suppose the action gate rejects the current proposal. Three records can then hold at the same time: upstream deviation, gating outcome and an unchanged environment.
 
-![Six circular nodes go from the environment observation through encoding, state, plan, and action gate to the actuators, and then return to the environment.](../figures/generated/fig-12-02-embodied-closed-loop.pdf "Every round of the closed loop turns the execution result back into an observation; whether an error grows depends on state retention, the action gate, and external feedback."){#fig:ch12-embodied-closed-loop width=94%}
+![Six circular nodes go from the environment observation through encoding, state, plan, and action gate to the actuators, and then return to the environment.](../figures/fig-12-02-embodied-closed-loop.png "Every round of the closed loop turns the execution result back into an observation; whether an error grows depends on state retention, the action gate, and external feedback."){#fig:ch12-embodied-closed-loop width=94%}
 
 Figure 12-2 supports reading encoding, state, plan, the action gate, the actuators and environmental feedback as one continuous consumption chain. It also shows what decides whether an error persists. The factors are state retention, action admission and external feedback. The figure does not prove that every system has the independent action gate it shows. Still less does it prove that a closed loop necessarily amplifies errors. Specific propagation still requires a comparison of clean and perturbed states, gating receipts and independent new observations.
 
@@ -3954,7 +4297,7 @@ Composite evaluation must place observation points at every layer. These cover r
 
 Start at the entry point in the figure through which the attack enters from the scene or the supply chain. Follow the observation, state, planning, action, execution and feedback arrows. At the same time, mark whether "the location where the carrier appears" and "the location where the first security invariant is broken" are the same.
 
-![Seven boxes showing the propagation chain of an attack entering from the scene or the supply chain into observation, state, planning, action, execution, and feedback.](../figures/generated/fig-13-01-closed-loop-attack-propagation.pdf "Training artifact contamination first breaks at U0, and a runtime external payload first breaks at U1; the observation, state, planning, and action nodes represent subsequent shift, consumption, or control locations."){#fig:ch13-closed-loop-attack-propagation width=94%}
+![Seven boxes showing the propagation chain of an attack entering from the scene or the supply chain into observation, state, planning, action, execution, and feedback.](../figures/fig-13-01-closed-loop-attack-propagation.png "Training artifact contamination first breaks at U0, and a runtime external payload first breaks at U1; the observation, state, planning, and action nodes represent subsequent shift, consumption, or control locations."){#fig:ch13-closed-loop-attack-propagation width=94%}
 
 Figure 13-1 supports separating the U0/U1 first-broken interfaces from the propagation that follows. It also shows that observation shift, state write, plan selection and action authorization are distinct control points. Only when the attacker additionally holds direct state, reasoning or authorization write capability may the first-broken interface fall at U2, U3 or U4 accordingly. The figure does not prove that every arrow has already been penetrated in any specific attack. Nor can one infer from the final execution that all upstream components were compromised at the same time. The actual path still needs verification with frozen variables, layered logs, intermediary substitution and gated receipts.
 
@@ -4195,7 +4538,7 @@ Differences between discrete action tokens are especially easy to misread. Take 
 
 Follow the figure from the model action proposal to the independent observation receipt. At each node, check how normalization, object authorization, the safety envelope, the controller and the actuator change the node before it. Identify the edge that actually obtains real-world capability. Then suppose the action gate rejects, the actuator completes only partially, or the environment does not change. For each case, state at which node the highest evidence should stop.
 
-![Seven boxes running from the model action proposal through normalization, authorization, the safety envelope, the controller, and the actuator to an independent observation receipt.](../figures/generated/fig-14-01-action-to-consequence.pdf "A trajectory or action token is only a proposal; coordinates, units, object identity, the safety envelope, and independent receipts jointly determine whether it can produce real-world consequences."){#fig:ch14-action-to-consequence width=94%}
+![Seven boxes running from the model action proposal through normalization, authorization, the safety envelope, the controller, and the actuator to an independent observation receipt.](../figures/fig-14-01-action-to-consequence.png "A trajectory or action token is only a proposal; coordinates, units, object identity, the safety envelope, and independent receipts jointly determine whether it can produce real-world consequences."){#fig:ch14-action-to-consequence width=94%}
 
 Figure 14-1 supports separating action tokens, normalization parameters, authorization results, post-gate commands, actuator responses and environmental events into distinct evidence positions. It also shows why independent receipts must return to the closed loop. The figure does not prove that the authorization or safety envelope it shows is already effective on any specific robot. Still less can a single execution arrow support an inference of harm to people, property or business. Control effectiveness and the highest consequence both still require actual receipts and isolated verification.
 
@@ -4487,7 +4830,7 @@ The object of this chapter is not any single detection model. It is a monitored 
 
 A delivery robot normally runs the main control path, with trusted localization and a fresh map. On that path the action gate checks only units, zone and speed. The execution receipt then updates the state. In a boundary case, vision and radar simultaneously lose freshness. Even if the main policy still provides a high-confidence route, RTA should switch to a low-speed stop or hold control that does not depend on that prediction. It should also latch the recovery condition. This boundary example shows that a safety envelope describes the currently permitted set, whereas a general safety boundary describes a system or trust boundary. The two cannot be used as synonyms, and a detection hit cannot be recorded as task success. Follow the upper and lower paths in the figure. Observe where the main controller hands over execution authority. Then compare what state the independent monitor, the switching logic and the safe controller each consume.
 
-![Two swimlanes, upper and lower, show the task control path and the independent runtime assurance path, respectively, and the two merge before execution.](../figures/generated/fig-15-01-runtime-assurance-loop.pdf "Runtime assurance lets a high-performance model propose actions, but an independent monitor switches control to a more conservative safe path when assumptions fail or the state goes out of bounds."){#fig:ch15-runtime-assurance-loop width=94%}
+![Two swimlanes, upper and lower, show the task control path and the independent runtime assurance path, respectively, and the two merge before execution.](../figures/fig-15-01-runtime-assurance-loop.png "Runtime assurance lets a high-performance model propose actions, but an independent monitor switches control to a more conservative safe path when assumptions fail or the state goes out of bounds."){#fig:ch15-runtime-assurance-loop width=94%}
 
 One judgment follows from the figure. A diagnostic signal becomes part of consequence limitation only when an independent switching and execution path consumes it. The figure proves neither that the monitor is necessarily timely, nor that the state is necessarily correct, nor that the safe controller covers the open world. Those conditions still have to be verified item by item, through latency, common-cause failure, constraint coverage and recovery drills.
 
@@ -4778,7 +5121,7 @@ The object of a world model system is a chain of "observation and action history
 
 In a normal example, an offline environment generator produces video from a first frame and camera actions for an on-duty operator to view, and its future does not automatically acquire action authority. In a boundary example, the same future is used by a planner to rank routes and also enters speed control in every control cycle. Consumer relationships for both WAM and WCM then appear in the system. Suppose public material shows video but never demonstrates an action consumer. Classification must then stop at WM/EWM or "unknown." Control capability cannot be filled in from a product name. All EWM, WAM, and WCM judgments in this chapter obey this working or operational boundary. Compare the output consumers of the four functions side by side in the figure. Focus on how the three columns "predicting the future," "participating in action selection," and "entering feedback control" change the classification, rather than reading the four rows as capability levels.
 
-![A four-row, three-column matrix comparing whether the world model, environment world model, world action model, and world control model generate or retain future state, participate in action selection, and enter feedback control; the WAM and WCM cells note that consumption evidence is required.](../figures/generated/fig-16-01-world-model-function-boundaries.pdf "The four names are not capability levels; a latent future likewise needs interface, training objective, or intervention evidence showing that a consumer uses it. WM is the superordinate concept, and EWM, WAM, and WCM are the operational classifications this survey uses according to consumer relationships."){#fig:ch16-world-model-function-boundaries width=94%}
+![A four-row, three-column matrix comparing whether the world model, environment world model, world action model, and world control model generate or retain future state, participate in action selection, and enter feedback control; the WAM and WCM cells note that consumption evidence is required.](../figures/fig-16-01-world-model-function-boundaries.png "The four names are not capability levels; a latent future likewise needs interface, training objective, or intervention evidence showing that a consumer uses it. WM is the superordinate concept, and EWM, WAM, and WCM are the operational classifications this survey uses according to consumer relationships."){#fig:ch16-world-model-function-boundaries width=94%}
 
 The figure can support one sequence of interface determinations. It can show who reads the future, whether the read result changes actions, and whether actions enter sustained feedback. Two further points still need verification through probes on closed interfaces, logs, and versioned operational evidence. The first is whether a given product has already implemented the internal chain in the figure. The second is whether EWM, WAM, or WCM have become stable official categories.
 
@@ -4802,7 +5145,7 @@ The functional scope of a world model can also extend beyond pixel-by-pixel reco
 
 This minimum functional boundary adds four classes of assets: state integrity, dynamics integrity, temporal consistency, and uncertainty calibration. A single observation error can be written into $s_t$ and then rolled out across multiple steps. Dynamics can sustain short-horizon reconstruction yet drift over long horizons, and a model can also be overconfident in out-of-distribution states. The central question of world model safety shifts from "does the output look right" to "which future variables are treated as the basis for decisions, and by whom." Follow the solid lines in the figure from the observation and action history to the planner. Then look back at which consumer the latent state, dynamics, future rollout, and goal constraints each provide information to.
 
-![Seven boxes run from observation and action history through encoding, latent state, dynamics, and future rollout to cost, constraints, and the planner.](../figures/generated/fig-16-02-world-model-internals.pdf "A world model typically compresses observations into state and then predicts the action-conditioned future; when a planner consumes these predictions, the state, dynamics, and goal all become safety objects."){#fig:ch16-world-model-internals width=94%}
+![Seven boxes run from observation and action history through encoding, latent state, dynamics, and future rollout to cost, constraints, and the planner.](../figures/fig-16-02-world-model-internals.png "A world model typically compresses observations into state and then predicts the action-conditioned future; when a planner consumes these predictions, the state, dynamics, and goal all become safety objects."){#fig:ch16-world-model-internals width=94%}
 
 This minimal internal chain explains why photorealistic imagery is not sufficient to infer reliable control. A planner may consume latent states, rewards, or constraints without consuming pixel reconstruction. The figure does not specify a concrete network architecture, and it does not prove that the modules are mutually independent. If an implementation shares an encoder or a goal head, common-cause failure still needs to be listed separately in the dependency graph.
 
@@ -5057,7 +5400,7 @@ This chapter is about an imagination chain. Its components are training artifact
 
 In the normal case the map, the state and the hard constraints come from different trusted sources. Candidate futures enter the action gate only after an external cost review. In the boundary case the attacker modifies a single training trajectory and still lets a wrong goal propagate over the long term, through a derived world model, synthetic data and policy checkpoints. The billboard that appears at deployment is only the backdoor trigger. The first-broken interface is still in the supply chain. In another boundary case the future imagery remains plausible while the action head deviates, so video quality has not observed the variable that actually failed. The optimizable variable, the frozen object, the budget, the consumer and the highest consequence layer all belong in one attack record. Trace the attack influence from left to right along the seven variables in the figure. Distinguish the position the red dashed line first enters from the position where task failure or control deviation finally appears.
 
-![Seven boxes running from data artifacts, observation, state, dynamics, goal constraints, and candidate ranking to action feedback, marking multiple attack positions.](../figures/generated/fig-17-01-imagination-attack-chain.pdf "The same task failure can come from different variables; an attack record must state the optimizable variable, the frozen part, the budget, the consumer, and the highest consequence layer."){#fig:ch17-imagination-attack-chain width=94%}
+![Seven boxes running from data artifacts, observation, state, dynamics, goal constraints, and candidate ranking to action feedback, marking multiple attack positions.](../figures/fig-17-01-imagination-attack-chain.png "The same task failure can come from different variables; an attack record must state the optimizable variable, the frozen part, the budget, the consumer, and the highest consequence layer."){#fig:ch17-imagination-attack-chain width=94%}
 
 What the figure supports is a causal localization order, not the compression of all attacks into a single grade. An attack that appears at the observation layer does not mean the first-broken interface must be in observation. A shifted internal state or future does not mean the action gate has already let it through. Real-world consequences still require closure through action, execution and independent environment acknowledgment. Tensor experiments not connected to a real consumer remain at the mechanism-level run evidence layer.
 
@@ -5411,7 +5754,7 @@ Every test unit reports its attack budget, denominator, benign utility, residual
 
 Work up from the bottom of the ladder and compare what each level actually connects. Look especially at the consumers and receipts still missing across three statements. Those statements are "a module output changes," "a simulation environment consumes an action," and "the target system closes the loop end to end."
 
-![A five-level ladder rising from static inspection to mechanism-level runs, simulation closed loops, end-to-end reproduction, and field events.](../figures/generated/fig-18-01-evidence-ladder.pdf "The closer evidence is to a real closed loop, the stronger the consequence conclusions it can support; lower-level evidence still has value, but cannot be automatically extrapolated to higher levels."){#fig:ch18-evidence-ladder width=94%}
+![A five-level ladder rising from static inspection to mechanism-level runs, simulation closed loops, end-to-end reproduction, and field events.](../figures/fig-18-01-evidence-ladder.png "The closer evidence is to a real closed loop, the stronger the consequence conclusions it can support; lower-level evidence still has value, but cannot be automatically extrapolated to higher levels."){#fig:ch18-evidence-ladder width=94%}
 
 The ladder supports management of the limits of conclusions. It is not a single ranking in which "higher is better." Static inspection and mechanism-level runs locate interface and formula problems quickly. A simulation closed loop observes state–action feedback. None of them substitutes for missing real weights, data, identity, actuators or field causal evidence. Failures and items that were never run must likewise be retained at their corresponding level of the ladder.
 
@@ -5477,7 +5820,7 @@ Every level must freeze the system under test. The optimization variables and th
 
 The figure shows one loop. Follow it to see why capability is restricted first once an anomaly is detected, and why evidence is then preserved before a recovery point is chosen. Follow it also to check which independent verification conditions are required before each return to normal operation.
 
-![Six ring states return to normal after passing from normal operation through capability restriction, safe stop, frozen forensics, trusted rebuild, and verified recovery.](../figures/generated/fig-18-02-recovery-state-machine.pdf "Recovery is not restarting the service; the system must first limit the consequences, then preserve evidence, choose a trusted recovery point, and use independent checks to confirm that it can be reopened."){#fig:ch18-recovery-state-machine width=94%}
+![Six ring states return to normal after passing from normal operation through capability restriction, safe stop, frozen forensics, trusted rebuild, and verified recovery.](../figures/fig-18-02-recovery-state-machine.png "Recovery is not restarting the service; the system must first limit the consequences, then preserve evidence, choose a trusted recovery point, and use independent checks to confirm that it can be reopened."){#fig:ch18-recovery-state-machine width=94%}
 
 The figure separates "restarting the service" from "trusted recovery". Process availability, model loading and the disappearance of an alert are each insufficient to unlock high-impact capabilities. It also does not presuppose that any fault is reversible. Suppose the transaction cannot be compensated, the physical environment has already changed, or no trusted recovery point exists. The system must then maintain isolation, manual control or a longer-term safe stop.
 
@@ -5611,7 +5954,7 @@ In the normal case, the procurement agent reads purpose-labeled quotes on the da
 
 Read the seven shared services in the figure from top to bottom. Identify where provenance, identity, state, capability, budget, traces, and recovery each constrain subsequent processing. Then judge which controls still need domain detectors to provide specialized signals.
 
-![A seven-layer vertical structure listing the security services shared across language, vision, embodied, and world model systems.](../figures/generated/fig-19-01-cross-domain-control-plane.pdf "LLMs, visual generation, VLA/WAM, and world models can share seven control services, but each domain still retains its own model mechanisms and specialized detectors."){#fig:ch19-cross-domain-control-plane width=94%}
+![A seven-layer vertical structure listing the security services shared across language, vision, embodied, and world model systems.](../figures/fig-19-01-cross-domain-control-plane.png "LLMs, visual generation, VLA/WAM, and world models can share seven control services, but each domain still retains its own model mechanisms and specialized detectors."){#fig:ch19-cross-domain-control-plane width=94%}
 
 What the figure supports is the architectural judgment of “shared control, retained specialized mechanisms.” Shared services cannot replace video temporal detection, robot safety controllers, or world model external anchors. If multiple services share the same identity, keys, clock, or policy publication root, they do not constitute genuinely independent defense in depth either. Common cause still needs to be exposed in the dependency graph and failure drills.
 
@@ -5989,7 +6332,7 @@ This chapter is not about a static compliance report. Its object is an operation
 
 In the normal case only display copy changes, and that copy enters no input, control or scoring. The dependency graph then confirms that the core evidence remains valid, and only the corresponding checklist verification is needed. The boundary case is different. A tool field appears to have had only its name changed. The new name nevertheless invalidates parameter validation, the human approval digest, the authorization policy and the event parser all at once. Old receipts must then expire on their own. The related capabilities stay closed until the local regression and the end-to-end path close again. An unchanged model version cannot rescue this evidence either. Evidence binds to the complete operational graph, not to a product name. Follow the seven links in the figure. They show how a single change moves from system definition into threat, control, test, release and monitoring. They also show how that change triggers the next round after the incident review. At the same time, use the mapping from the previous paragraph to map the seven evidence nodes back to the six execution phases of the main text. Focus on which nodes cause old evidence to expire.
 
-![Seven ring nodes run from system definition, threat, control, test, release, and monitoring to review, and are then triggered by a change into the next round.](../figures/generated/fig-20-01-operating-governance-loop.pdf "Once the model, data, tools, policy, or environment changes, the affected evidence expires accordingly; the closed loop re-runs the tests, release, and recovery decisions."){#fig:ch20-operating-governance-loop width=94%}
+![Seven ring nodes run from system definition, threat, control, test, release, and monitoring to review, and are then triggered by a change into the next round.](../figures/fig-20-01-operating-governance-loop.png "Once the model, data, tools, policy, or environment changes, the affected evidence expires accordingly; the closed loop re-runs the tests, release, and recovery decisions."){#fig:ch20-operating-governance-loop width=94%}
 
 The figure supports evidence lifecycle management. It does not support a claim that one completed round of testing permits permanent release. Nor can it determine automatically whether the change impact graph is complete. When dependencies are unknown, receipts are missing, or common causes have not yet been modeled, the conservative action is to widen the retest scope and narrow the released capability. Record the unclosed items. Do not carry a historical "pass" forward.
 
