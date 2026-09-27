@@ -2,7 +2,7 @@
 
 ## Attacks, Defenses, and Engineering Verification from Language Models to World Models
 
-Compiled by: the initiator of this task
+Mingjun Cheng, Vorynel Co.,Ltd
 
 ## Summary
 
