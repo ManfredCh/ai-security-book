@@ -1,7 +1,5 @@
 ovides authenticity signals that are verifiable but do not overpromise, and how it turns detection results into timely, appealable action.
 
-\newpage
-
 # Chapter 11　Video Spatiotemporal Safety and the Authenticity Chain
 
 An online product launch uses a real-time digital human to stand in for a speaker who cannot attend. The picture is natural frame by frame. The voice and lip movements are broadly in sync, and the platform detector raises no alert either. Three minutes into the livestream, the digital human delivers an unapproved investment instruction. The clip is then edited, speed-changed, stripped of metadata and forwarded across platforms. After the fact, the detector can find anomalies in the complete file, yet it cannot answer three more important questions: when the risk first formed, when the livestream could have been stopped, and who handles the circulating copies.

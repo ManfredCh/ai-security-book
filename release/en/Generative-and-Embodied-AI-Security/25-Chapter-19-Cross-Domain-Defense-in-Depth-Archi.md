@@ -1,7 +1,5 @@
 ows the system to keep evolving as models and environments change. It also gives every capability expansion a traceable evidentiary basis.
 
-\newpage
-
 # Chapter 19: Cross-Domain Defense-in-Depth Architecture
 
 An enterprise simultaneously deploys a customer-service agent, marketing video generation, warehouse robots, and a world model for inventory planning. Four teams separately purchase content classifiers, watermarking, robot emergency stops, and anomaly detection services. Yet they still share the same identity system, object storage, model repository, retrieval platform, logs, and release pipeline. A single upstream artifact losing trust, or a long-lived token leaking, may bypass all four sets of “specialized defenses.” The local controls have not failed, yet the system may still slip through the gaps between them.
@@ -47,7 +45,7 @@ Shared services must share a set of objects without sharing the model's internal
 Typed dependency edges connect objects. `derived_from` denotes derivation, `loaded_with` runtime composition, `authorized_by` approval, `read_state` and `write_state` state access, `executed_as` principal identity, `observed_by` feedback provenance, and `recovered_from` recovery points. Every edge must carry time, version, and responsibility domain. Recording merely that two objects "are related" is not enough. The control plane can be written as
 
 \[
-\mathcal{C}=(N,E,\Pi,\Sigma),
+$\mathcal{C}$=(N,E,\Pi,\Sigma),
 \]
 
 where \(N\) is the object set, \(E\) is the dependency and action edges, \(\Pi\) is the policy set, and \(\Sigma\) is the current state of the objects. A request does not call the model directly. Instead, the control plane validates the relevant subgraph. It asks whether data and artifacts are available and whether state is fresh. It checks whether capabilities match and whether actions stay within budget. It also asks whether feedback comes from an independent source. Model inference may fail. The control plane must nonetheless maintain these invariants.

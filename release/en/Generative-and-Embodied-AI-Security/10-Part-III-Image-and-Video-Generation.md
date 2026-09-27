@@ -1,7 +1,5 @@
 trajectory, and recovery. The specific perturbation budget, consumers, and consequence metrics are still redefined by the target modality.
 
-\newpage
-
 # Part III: Image and Video Generation
 
 ## Guide to This Part

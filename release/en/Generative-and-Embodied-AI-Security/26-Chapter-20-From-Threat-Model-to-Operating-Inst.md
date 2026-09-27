@@ -1,7 +1,5 @@
 pability, rather than an architecture diagram, only once it enters versions, pipelines, on-call duty and the division of responsibilities.
 
-\newpage
-
 # Chapter 20 From Threat Model to Operating Institutions
 
 A security architecture stalls most easily at the review meeting. The diagram has trust boundaries and the document has a high-risk list. Yet no executable gate stands before release, and in operation no one is responsible for alerts, revocation and recovery. Models, data, tools and scenarios keep changing, so every critical change must re-run the matching controls and the matching evidence chain. That continuous evidence chain is the security artifact a team can hand over and keep on watch. This chapter condenses the preceding nineteen chapters into six execution phases. Sections 20.2–20.7 of the main text map onto the first through the sixth step in order. The first step freezes the scope and the change unit, and the second generates a test matrix from the threat record. The third uses hard gates and diagnostic scores to make the release decision, while the fourth continuously monitors the real control objectives. The fifth responds to incidents and verifies recovery, and the sixth turns review gaps into a falsifiable plan. Section 20.1 outlines the minimal security argument that runs through all six steps, and it does not count as a seventh step.
@@ -173,7 +171,7 @@ Release decisions require two classes of mechanism. Hard gates handle non-compen
 
 \[
 \begin{aligned}
-\mathrm{Release}={}&H_{rights}\land H_{identity}\land H_{execution}\\
+\mathrm{Release}=&H_{rights}\land H_{identity}\land H_{execution}\\
 &\land H_{domain\text{-}safety}\land H_{recovery}\land H_{evidence}\\
 &\land D_{acceptable}.
 \end{aligned}

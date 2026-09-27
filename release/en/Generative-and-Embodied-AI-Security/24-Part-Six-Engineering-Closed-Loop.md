@@ -1,7 +1,5 @@
 ge. The next part will assemble these controls together with language, image, and video systems into a cross-domain security architecture.
 
-\newpage
-
 # Part Six: Engineering Closed Loop
 
 ## Guide to This Part

@@ -1,7 +1,5 @@
  permissions, feedback channels, and physical consequences. It answers at which step "doing the wrong thing" actually becomes established.
 
-\newpage
-
 # Chapter 14: Actions, Tools, and Physical Consequences: From Proposal to Execution
 
 A vision–language–action model (VLA) outputs the action token "open the gripper" in simulation. Another system converts the same semantics into a ROS2 message and sends it to a real machine. A third system executed the action, but a hardware limit stopped it before contact. All three records superficially hit the action. The actual evidence stops at the model output, at control message acceptance, and at constrained physical execution. An evaluation that fails to distinguish these three stages will exaggerate the attack effect and erase the value of the defense.

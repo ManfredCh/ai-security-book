@@ -1,7 +1,5 @@
  Chapter 13 will trace this propagation chain segment by segment, along the supply chain, observation, semantics, memory, and imagination.
 
-\newpage
-
 # Chapter 13　Attack Propagation in Observation, Reasoning, and Planning
 
 A robot at a warehouse entrance sees an ordinary "Safety First" poster. That poster can be a natural background, or a physical patch that changes visual features, or a carrier of hidden commands read out by OCR. If training bound the same pattern to a malicious action, it also becomes a backdoor trigger. The carrier is the same, but the attack's privileges, first-broken interface, and available defenses are entirely different. Record all four cases as an "image attack", and a team can neither calculate the risk nor find the earliest blocking point.
@@ -205,7 +203,7 @@ J_{\mathrm{task}}(f_\theta(T(o,\delta),D))
 -\lambda J_{\mathrm{detect}}(T(o,\delta),D).
 \]
 
-The first term pursues the task or action objective. The second term penalizes being detected, and $\mathcal B$ is the feasible budget. This expression is only a generic structure; the detection scores, queries and physical constraints of different studies cannot be merged. Defense evaluation must at least state whether the attacker knows the preprocessing, thresholds, randomization, state machine and action gate.
+The first term pursues the task or action objective. The second term penalizes being detected, and $\mathcal{B}$ is the feasible budget. This expression is only a generic structure; the detection scores, queries and physical constraints of different studies cannot be merged. Defense evaluation must at least state whether the attacker knows the preprocessing, thresholds, randomization, state machine and action gate.
 
 Adaptive does not equal unlimited capability. An attacker may know the algorithm but not the random seed. It may observe the final action but not see the anomaly score. It may be able to reset in simulation but not in reality. It may be able to place a patch but not control the viewing angle. Knowledge, observation, writing and retries should be listed separately. If a test allows reading all internal signals, the conclusion is an upper bound under a strong adversary. It should not be described directly as the most common attack path.
 

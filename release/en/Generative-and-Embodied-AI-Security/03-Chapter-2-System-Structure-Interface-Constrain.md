@@ -246,8 +246,6 @@ The system structure description and the interface constraints preserve what dis
 
 The first-broken interface finds the earliest control entry point. The consequence layer limits the strength of conclusions. The nine-item threat record turns abstract risk into tests. The next chapter takes up the third hard problem. Even with the interfaces specified clearly, success rates, benchmark scores, and reproduction receipts may still not be comparable across studies. Security engineering avoids being led around by a striking percentage only by fixing the denominator, the attack budget, benign utility, and the evidence level first.
 
-\newpage
-
 ---
 
 [← Back to contents](index.md)

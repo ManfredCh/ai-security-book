@@ -1,7 +1,5 @@
 t planning, action filtering, rollback and falsifiable testing. Chapter 18 will complete this set of runtime assurance and recovery rules.
 
-\newpage
-
 # Chapter 18　Runtime Assurance, Recovery, and Falsifiable Testing
 
 A world model reports a "95% confident" safe trajectory. The controller accelerates on that basis. Only afterward does it discover that the uncertainty estimate and the predictor share the same latent state. Both are therefore overconfident at once on the perturbed map. The calibration distribution, independence and failure conditions determine what the number 95% practically means. Those elements need to enter the control rule. A probabilistic score has runtime-assurance meaning only if it can change the action in time. It must also trigger more conservative control when its assumptions fail.

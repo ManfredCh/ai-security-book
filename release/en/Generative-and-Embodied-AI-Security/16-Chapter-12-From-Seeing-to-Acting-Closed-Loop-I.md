@@ -1,7 +1,5 @@
 ation acknowledgments. Separating these layers is what stops a single proxy metric from being used to draw conclusions about robot safety.
 
-\newpage
-
 # Chapter 12　From Seeing to Acting: Closed-Loop Interfaces of Three Model Types
 
 A mobile manipulator receives the task "deliver the blue medicine box to workbench No. 3." Both the blue medicine box and a red warning sign reading "No. 3" sit in the camera view. The system can name both objects correctly and still treat the warning sign as the target location. Its semantic judgment can be correct while it decodes "5 cm to the left" as rightward motion. It can even generate a future video that looks safe while a different action branch drives the manipulator through a no-entry zone. Vision is involved in all three failures, yet each one occurs at a different coupling point: semantic, action, and imagination–action. Calling the system only an "embodied model" makes it hard to place safety control at the correct interface.
@@ -146,7 +144,7 @@ b_t=\mathcal U(b_{t-1},o_t,a_{t-1}),\qquad
 a_t\sim\pi(a\mid b_t,l).
 \]
 
-Here, $\mathcal U$ is the state update and $l$ is the authorized task. This representation reveals three safety facts. First, a correct observation does not amount to a complete state, because any variable the sensor does not see stays unknown. Second, a single erroneous observation can gain persistence through the state update. Third, an action changes what will be visible next time. An observation affected by one's own action belongs to closed-loop feedback, and it needs an external source to form independent verification.
+Here, $\mathcal{U}$ is the state update and $l$ is the authorized task. This representation reveals three safety facts. First, a correct observation does not amount to a complete state, because any variable the sensor does not see stays unknown. Second, a single erroneous observation can gain persistence through the state update. Third, an action changes what will be visible next time. An observation affected by one's own action belongs to closed-loop feedback, and it needs an external source to form independent verification.
 
 State representation rules must therefore allow “not knowing.” Whenever the position of personnel, the obstacle depth or the object identity is not visible, the model should output unknown or an interval. The controller then reduces speed, requests a new viewpoint, or stops accordingly. When the model is forced to give a single definite value at every moment, perceptual blanks turn into seemingly precise plans. A world model can complete an occluded state. That completion is prediction, not observation, so it must carry uncertainty and a provenance label.
 

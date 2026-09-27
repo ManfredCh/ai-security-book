@@ -1,7 +1,5 @@
 upply chain. The same differences decide that the later runtime and authenticity controls must take events and time windows as their unit.
 
-\newpage
-
 # Chapter 9: Data, Models, and the Personalization Supply Chain
 
 A creative team downloads a "cinematic character LoRA" from a public repository and pairs it with an in-house base model, a third-party variational autoencoder (VAE) and a motion module. In standalone trials, the character's appearance, image quality and motion all meet expectations. Combine a particular class of prompts with a camera trajectory, however, and unauthorized marks keep appearing in the short film. The team rescans the main model, finds nothing abnormal, and blames the random seed. The real gap lies earlier. Approval covered a single file. What actually runs is an artifact closure made up of data, parameters, code, load order and update history.

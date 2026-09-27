@@ -253,8 +253,6 @@ You can convert this chapter directly into one architecture action. Pick a real 
 
 The capability chain, the consequence layers and the evidence boundary are also the shared reading coordinates for all subsequent chapters. Readers can always ask four questions: what state an input affected, what permissions a plan obtained, what receipt confirmed execution, and at which layer the conclusion stops.
 
-\newpage
-
 ---
 
 [← Back to contents](index.md)

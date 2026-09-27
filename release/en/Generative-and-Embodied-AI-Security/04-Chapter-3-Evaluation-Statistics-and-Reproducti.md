@@ -299,8 +299,6 @@ Suppose the results feed a release decision. Then an accountable person outside 
 
 When the evidence is insufficient to support deployment, the system stays capability-limited and lists the conditions for additional evidence. The release decision then stays consistent with the currently verifiable facts. The closer the evidence gets to real consequences, the stricter authorization, isolation, and ethical constraints should be. At every step from static checks to production evidence, the strength of the conclusion, the risk treatment, and the verifiable facts should be promoted together. Do not write a strong conclusion first and then look for material to fill it in.
 
-\newpage
-
 ---
 
 [← Back to contents](index.md)

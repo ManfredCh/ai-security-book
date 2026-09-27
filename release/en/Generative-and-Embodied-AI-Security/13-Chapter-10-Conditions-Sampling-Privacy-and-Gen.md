@@ -1,7 +1,5 @@
 nditions through encoding and moderation, follows the state sampling preserves, and shows how black-box feedback becomes an attack budget.
 
-\newpage
-
 # Chapter 10　Conditions, Sampling, Privacy, and Generation Services
 
 An image-to-video service received three inputs. One was an ordinary portrait photo, another a motion description with no obvious risk, and the third a camera trajectory. Each passed moderation on its own. Yet the generator completed an unauthorized event during the middle few seconds. Suppose the platform records only "the text passed" and "the first frame is compliant." It will blame the semantics of the joint conditions on coincidence. If it records only the final refusal, it hides that the generator had already formed the target event. It also loses exactly which layer made moderation take effect.

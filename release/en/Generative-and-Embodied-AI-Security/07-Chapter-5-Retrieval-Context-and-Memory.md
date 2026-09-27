@@ -1,7 +1,5 @@
 ns and defense-aware adaptive tests. The former hold the known entrances. The latter check whether controls truly constrain the mechanism.
 
-\newpage
-
 # Chapter 5 Retrieval, Context, and Memory
 
 An engineer puts a question to the enterprise assistant: "How should an older model of pump be started at low temperature?" The assistant pulls a maintenance manual, a forum post, and a conversation summary saved several weeks earlier from the knowledge base. The answer reads as complete. Yet it presents the forum's temporary workaround steps as formal procedure, and it also cites another tenant's equipment records. A team that examines only the final text may classify the problem as hallucination. Follow the system chain backwards, though, and at least three boundaries have already failed. Untrusted content entered the index. High similarity outweighed source quality. A cross-tenant record entered the context.

@@ -14,8 +14,6 @@ After reading this part, readers should be able to record "what the model said" 
 
 A recovery thread also runs through the four chapters. Input filtering can only reduce known payloads. The state-write gate determines whether an anomaly survives across sessions. The capability gate limits what side effects an anomaly can obtain. Unified tracing and revocation mechanisms determine whether a team can stop the spread and rebuild a trusted state after discovering a problem. Placing these four kinds of control on different trust roots comes closer to an acceptance-ready defense in depth than repeatedly asking the same model whether it is "safe".
 
-\newpage
-
 ---
 
 [← Back to contents](index.md)

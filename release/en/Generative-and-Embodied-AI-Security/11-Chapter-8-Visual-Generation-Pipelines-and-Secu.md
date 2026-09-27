@@ -1,7 +1,5 @@
 mple can substitute for an evaluation with a denominator. Nor can it prove that the supply chain and the release chain are already closed.
 
-\newpage
-
 # Chapter 8 Visual Generation Pipelines and Security Assets
 
 A brand studio is preparing to launch a creative service. The service runs "text to poster — reference image to short film — digital human voiceover — automatic publishing." The product manager sees an input box and a download button. A security engineer should instead see a pipeline whose states keep multiplying. The prompt gets encoded, reference assets get uploaded, several model components get loaded dynamically, and the sampling process retains latent variables and caches. The output still has to pass through super-resolution, frame interpolation, voiceover, moderation, transcoding, and publishing. Two boundaries can break here. If the condition parser lets text in a reference asset override the approved script, the system has crossed the condition-provenance boundary. If the publishing service lets newly generated media inherit the account authorization of old media, the system has crossed the publishing-permission boundary. A final image that is sharp and natural does not change either fact.

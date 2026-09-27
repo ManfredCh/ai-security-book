@@ -1,7 +1,5 @@
 apter 12 will discuss how errors acquire physical execution capability once generated content enters a perception–reasoning–action system.
 
-\newpage
-
 # Part IV　Vision–Language–Action Closed Loop
 
 ## Guide to This Part

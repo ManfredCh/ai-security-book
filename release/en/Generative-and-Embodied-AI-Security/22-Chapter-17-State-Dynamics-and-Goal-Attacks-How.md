@@ -1,7 +1,5 @@
 by layer — supply chain, observation, state, dynamics, goals, planning and feedback — and show how world model attacks cross the consumer.
 
-\newpage
-
 # Chapter 17　State, Dynamics, and Goal Attacks: How the Imagination Chain Is Hijacked
 
 The world model of one unmanned transport vehicle predicted the road ahead and the motion of other vehicles accurately, yet its cost function had dropped the "no entry" constraint. A second vehicle kept every constraint, but its map conditions were slightly altered, so the future trajectory still looked coherent in the wrong lane. A third system produced a future with no obvious anomaly, yet its action head chose a control that did not match that future. All three may receive decent video quality scores. Their points of failure lie in the goal, the physical conditions and the imagination–action coupling.
@@ -37,7 +35,7 @@ s_t=E_\theta(s_{t-1},o_t,a_{t-1}),
 j^*=\arg\min_j C_\psi(\hat \tau^{(j)},g,\mathcal C).
 \]
 
-An attacker can change any of these: the observation $o_t$, the historical state input, the training parameters $\theta$, the candidate actions, the goal $g$, the constraints $\mathcal C$, the cost model $\psi$. The same final task failure may come from completely different first-broken interfaces. A security record should name the attack variable $v$, the frozen part, the budget and the objective function. It must also name the consumer and the highest consequence layer. World model attacks have at least three amplifiers. State recursion writes a single input into multiple future time steps. Imagination rollout lets small dynamics deviations accumulate with the horizon $H$. The planner compresses continuous predictions into discrete choices. Near the decision boundary, tiny changes in candidate scores may flip the final action. Average prediction error does not necessarily capture these three amplifications.
+An attacker can change any of these: the observation $o_t$, the historical state input, the training parameters $\theta$, the candidate actions, the goal $g$, the constraints $\mathcal{C}$, the cost model $\psi$. The same final task failure may come from completely different first-broken interfaces. A security record should name the attack variable $v$, the frozen part, the budget and the objective function. It must also name the consumer and the highest consequence layer. World model attacks have at least three amplifiers. State recursion writes a single input into multiple future time steps. Imagination rollout lets small dynamics deviations accumulate with the horizon $H$. The planner compresses continuous predictions into discrete choices. Near the decision boundary, tiny changes in candidate scores may flip the final action. Average prediction error does not necessarily capture these three amplifications.
 
 Malicious attacks must still be separated from natural failures. Occlusion, sensor noise, distribution shift and model error can expose the same interfaces. None of them carries an adversary's goals and budget. Natural robustness methods can become the basis of runtime assurance. Conclusions about attack defense also require adaptive testing against detectors and controllers.
 

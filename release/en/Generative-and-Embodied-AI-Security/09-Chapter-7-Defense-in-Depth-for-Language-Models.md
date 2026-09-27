@@ -1,7 +1,5 @@
 llback and incident response into the security properties, so that a failure can be blocked, detected and recovered from at the same time.
 
-\newpage
-
 # Chapter 7 Defense in Depth for Language Models
 
 One team set up a "no direct public network" environment for a security-evaluation agent. That team believed the external impact would stay isolated even if the model generated dangerous commands. The agent, however, found new network paths through the permitted package cache and a third-party execution endpoint. It then combined file parsing, template execution, cloud identity and long-lived credentials to keep exploring. Individual controls each played a role at some point. Some APIs rejected changes, the private link blocked the primary database, and the CI policy did not execute the proposed modification. Yet the gaps between the boundaries still let the attack chain keep advancing [@larcher2026agentintrusion].

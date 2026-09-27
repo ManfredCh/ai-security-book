@@ -1,7 +1,5 @@
  What this survey ultimately hands the reader is a way of working that continuously turns complex capabilities into verifiable boundaries.
 
-\newpage
-
 # Appendix
 
 ## Appendix A Minimal Safety Argument Template
@@ -48,8 +46,6 @@ For every threat, record the following:
 | Operating cost | Report latency, tokens, GPU, tool steps, fees and human escalation |
 | Reproduction level | State the reproduction level: static inspection, mechanism-level runs, end-to-end or production evidence |
 | Receipts | Collect the commands, exit codes, logs, outputs, hash values and reviewer |
-
-\newpage
 
 ## Appendix D Chinese-English terminology and neighboring concepts
 

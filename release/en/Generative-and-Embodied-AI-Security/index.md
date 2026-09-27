@@ -4,7 +4,6 @@
 
 Mingjun Cheng, Vorynel Co.,Ltd
 
-
 ## Summary
 
 A model that only generates a passage of text keeps its security problems largely at the level of content. When its outputs enter retrieval, long-term memory, media publishing, software tools, robot actuators and world-model closed loops, errors may then acquire state, identity and real-world capability. This survey is organized around one unified chain of questions. Where does untrusted input first cross a trust boundary? How does an attack propagate from data to state, plans, actions and feedback? How do defenses establish independent, verifiable and recoverable controls outside the model?
@@ -112,8 +111,6 @@ The cases here divide into research cases and engineering worked examples. Resea
 The "Bringing It into a Real System" section at the end of each chapter is not a homework question. It is a narrative that begins at the field entry point. It shows which receipt the team examines first, and how version and consumer are judged. It also shows where extrapolation stops, and which control should next change the system state for real. Retell the objects, permissions, evidence and recovery along this process, and the reader has already grasped the engineering throughline of the chapter. Algorithm details can be pursued further, according to responsibilities.
 
 An unfamiliar abbreviation may still turn up in a chapter. Start with the Chinese-English glossary at the back of this survey, then return to the principles groundwork that opens the chapter. The glossary fixes names and neighboring concepts. The principles groundwork explains how these objects act in a system. The main-text cases provide evidence and failure paths. The three carry different responsibilities, so no single definition has to bear the three tasks of naming, teaching and proving at once.
-
-\newpage
 
 ## Contents
 

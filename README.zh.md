@@ -6,7 +6,7 @@
 
 <sub>6 部 · 24 章 · 28.0 万汉字 · 333 页 PDF</sub>
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ·  [![Status](https://img.shields.io/badge/Status-compiled_draft-orange)](#状态与边界)  ·  [![Language](https://img.shields.io/badge/Language-English_%7C_%E4%B8%AD%E6%96%87-blue)](#语言与版本)  ·  [![中文 PDF](https://img.shields.io/badge/PDF_%E4%B8%AD%E6%96%87-333_pp.-red)](release/zh/生成式与具身智能安全.pdf)  ·  [![English PDF](https://img.shields.io/badge/PDF-313_pp.-red)](release/en/Generative-and-Embodied-AI-Security.pdf)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ·  [![Status](https://img.shields.io/badge/Status-compiled_draft-orange)](#状态与边界)  ·  [![Language](https://img.shields.io/badge/Language-English_%7C_%E4%B8%AD%E6%96%87-blue)](#语言与版本)  ·  [![中文 PDF](https://img.shields.io/badge/PDF_%E4%B8%AD%E6%96%87-333_pp.-red)](release/zh/生成式与具身智能安全.pdf)  ·  [![English PDF](https://img.shields.io/badge/PDF-312_pp.-red)](release/en/Generative-and-Embodied-AI-Security.pdf)
 
 [English](README.md) · [简体中文](README.zh.md)
 
@@ -63,7 +63,7 @@
 | Language | README | Documents |
 |---|---|---|
 | **简体中文** | 本文件 | 中文原稿，28.0 万汉字，333 页 PDF |
-| **English** | [README.md](README.md) | 英文译本，19.3 万词，313 页 PDF |
+| **English** | [README.md](README.md) | 英文译本，19.3 万词，312 页 PDF |
 
 
 ## 概述
@@ -127,7 +127,7 @@
 | | Markdown（在 Git 上直接读） | PDF（下载看） |
 |---|---|---|
 | **中文** | [生成式与具身智能安全.md](release/zh/生成式与具身智能安全/index.md) | [333 页](release/zh/生成式与具身智能安全.pdf) |
-| **English** | [Generative-and-Embodied-AI-Security.md](release/en/Generative-and-Embodied-AI-Security/index.md) | [313 页](release/en/Generative-and-Embodied-AI-Security.pdf) |
+| **English** | [Generative-and-Embodied-AI-Security.md](release/en/Generative-and-Embodied-AI-Security/index.md) | [312 页](release/en/Generative-and-Embodied-AI-Security.pdf) |
 
 PDF 已分页并内嵌全部 25 幅图，离线阅读或打印用它；Markdown 便于检索与引用。
 

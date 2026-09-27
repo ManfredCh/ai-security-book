@@ -14,8 +14,6 @@ The normal case in this part is a read-only question-answering service. Its outp
 
 This part also sets the evidence discipline for the whole book. Unknown versions, missing denominators, failed runs and unverifiable consumers must not be deleted in silence. Static files, local fixtures, simulated closed loops and field incidents each have value. A conclusion, however, reaches only as far as the layer actually reached in operation. That constraint lets later chapters deliver honest, useful engineering judgments even against new models and incomplete public materials.
 
-\newpage
-
 ---
 
 [← Back to contents](index.md)

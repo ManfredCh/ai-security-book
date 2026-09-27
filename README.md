@@ -4,9 +4,9 @@
 
 **What happens to security when a model stops answering questions and starts acting.**
 
-<sub>6 parts · 24 chapters · 193,000 English words · 313-page PDF</sub>
+<sub>6 parts · 24 chapters · 193,000 English words · 312-page PDF</sub>
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ·  [![Status](https://img.shields.io/badge/Status-compiled_draft-orange)](#status-and-limits)  ·  [![Language](https://img.shields.io/badge/Language-English_%7C_%E4%B8%AD%E6%96%87-blue)](#languages-and-editions)  ·  [![English PDF](https://img.shields.io/badge/PDF-313_pp.-red)](release/en/Generative-and-Embodied-AI-Security.pdf)  ·  [![中文 PDF](https://img.shields.io/badge/PDF_%E4%B8%AD%E6%96%87-333_pp.-red)](release/zh/生成式与具身智能安全.pdf)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ·  [![Status](https://img.shields.io/badge/Status-compiled_draft-orange)](#status-and-limits)  ·  [![Language](https://img.shields.io/badge/Language-English_%7C_%E4%B8%AD%E6%96%87-blue)](#languages-and-editions)  ·  [![English PDF](https://img.shields.io/badge/PDF-312_pp.-red)](release/en/Generative-and-Embodied-AI-Security.pdf)  ·  [![中文 PDF](https://img.shields.io/badge/PDF_%E4%B8%AD%E6%96%87-333_pp.-red)](release/zh/生成式与具身智能安全.pdf)
 
 [English](README.md) · [简体中文](README.zh.md)
 
@@ -132,7 +132,7 @@ Every chapter below links straight into the manuscript.
 | | Markdown (read on Git) | PDF (download) |
 |---|---|---|
 | **中文** | [生成式与具身智能安全.md](release/zh/生成式与具身智能安全/index.md) | [333 pp.](release/zh/生成式与具身智能安全.pdf) |
-| **English** | [Generative-and-Embodied-AI-Security.md](release/en/Generative-and-Embodied-AI-Security/index.md) | [313 pp.](release/en/Generative-and-Embodied-AI-Security.pdf) |
+| **English** | [Generative-and-Embodied-AI-Security.md](release/en/Generative-and-Embodied-AI-Security/index.md) | [312 pp.](release/en/Generative-and-Embodied-AI-Security.pdf) |
 
 The PDFs are paginated and carry all 25 figures inline, which makes them the better choice for
 offline reading or printing. The Markdown is the better choice for searching and quoting.

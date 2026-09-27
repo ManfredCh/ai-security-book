@@ -1,7 +1,5 @@
 perspective to world models in general. It first resolves the functional boundaries among WM, EWM, WAM, and WCM, which are often confused.
 
-\newpage
-
 # Part V: World Models and Control
 
 ## Guide to This Part

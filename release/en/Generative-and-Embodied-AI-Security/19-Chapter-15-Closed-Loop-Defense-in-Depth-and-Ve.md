@@ -1,7 +1,5 @@
 mbles upstream detection, the independent action gate, runtime assurance and the recovery state machine into closed-loop defense in depth.
 
-\newpage
-
 # Chapter 15　Closed-Loop Defense in Depth and Verification
 
 Just before the robot is about to hit an obstacle, a detector raises its anomaly score to 0.93. No component consumes that score. The controller works through the remaining action chunks. The incident investigation report later cites that detection curve as evidence that "the defense was effective." The problem is not whether the detector is accurate. It is that the system never defined who has the authority to shorten an action, refuse execution, switch controllers or latch a stop once the score exceeds the threshold.

@@ -1,7 +1,5 @@
 t also discusses how to separate dangerous intent from dangerous execution using capability, isolation, budget, and supply chain controls.
 
-\newpage
-
 # Chapter 6　Tools, Identity, Execution, and Supply Chain
 
 A code maintenance agent is handed one task. "Check the newly submitted defect report, run the relevant tests, and draft a fix proposal." The defect report contains a command disguised as a debugging step. Once the agent reads it, it generates tool calls that read environment variables, download a script, and publish a software package. At this point the most important question is no longer whether the model "believed" that text. It is whether the runtime will turn a candidate call into a real process, a network request, and publishing authority.
@@ -168,14 +166,14 @@ The threat model must also state "abuse within the allowed set." The action gate
 Least privilege is computed jointly from the authorization goal and the external policy. The system first authenticates the user or service principal outside the model. Then the user, organizational policy or a named owner confirms task constraints such as tenant, object, action, upper bound and deadline, thereby forming the authorization goal \(g\). The policy then computes the capability set for that goal:
 
 \[
-\mathcal{C}_g=
+$\mathcal{C}$_g=
 \{c\mid \text{serve}(c,g)\land
 \text{flow}(c,L)\land
 \text{policy}(c,\Phi)\land
 \text{budget}(c,B)\}.
 \]
 
-The function serve decides whether an action serves the original goal. Flow checks argument provenance and the recipient. Policy checks the principal, the object, the action and the business invariants. Budget checks counts, time and cost. A call \(c'\) that the model proposes can be executed only when \(c'\in\mathcal{C}_g\). High-impact actions must also pass a consequence gate. Membership in the set is not final approval.
+The function serve decides whether an action serves the original goal. Flow checks argument provenance and the recipient. Policy checks the principal, the object, the action and the business invariants. Budget checks counts, time and cost. A call \(c'\) that the model proposes can be executed only when \(c'\in$\mathcal{C}$_g\). High-impact actions must also pass a consequence gate. Membership in the set is not final approval.
 
 In an implementation, the authorization goal \(g\) separates confirmed task constraints from the candidate content fields that the model has yet to generate. Task constraints cover the authenticated principal, the tenant, the allowed repositories, the allowed recipients, the maximum amount and the release status. Search terms, summaries and patch content are candidate content fields. Authentication proves only who the requester is. It does not by itself confirm each task constraint, and it gives model candidate content no authorization force. Suppose the model needs to add a repository or a recipient. The runtime framework then generates a permission expansion request, the user or policy owner confirms it, and the original capability set remains unchanged until that confirmation.
 
@@ -281,7 +279,7 @@ The checklist must pass on behavioral criteria. "No public network by default", 
 
 ## 6.14 Bringing It into Real Systems
 
-A code-maintenance agent is about to be connected to two designated repositories. The user request is constrained to "read the snapshot and generate a patch draft." The runtime harness first authenticates the user principal, then constructs the named-confirmation task constraints as an authorization target \(g\). The tenant, the two repositories, the read-only snapshots, the short-lived test environment and the internal draft area make up the constraints. Search terms, analysis summaries and patch text are candidate content fields. Policy is computed from this \(\mathcal{C}_g\). It allows reads of the designated snapshots, tests in the isolated environment and writes to the draft. Repository writes, software releases, arbitrary public network access and long-lived tokens all sit outside the capability set. If the model proposes a new repository or release target, the system creates a permission-extension request. The original capabilities remain unchanged until named confirmation.
+A code-maintenance agent is about to be connected to two designated repositories. The user request is constrained to "read the snapshot and generate a patch draft." The runtime harness first authenticates the user principal, then constructs the named-confirmation task constraints as an authorization target \(g\). The tenant, the two repositories, the read-only snapshots, the short-lived test environment and the internal draft area make up the constraints. Search terms, analysis summaries and patch text are candidate content fields. Policy is computed from this \($\mathcal{C}$_g\). It allows reads of the designated snapshots, tests in the isolated environment and writes to the draft. Repository writes, software releases, arbitrary public network access and long-lived tokens all sit outside the capability set. If the model proposes a new repository or release target, the system creates a permission-extension request. The original capabilities remain unchanged until named confirmation.
 
 Every action is expanded into principal, object, action, parameters, time, count and version. Sending an email likewise requires the recipient, attachments, body provenance, a validity period and an idempotency identifier, whereas the name "email tool" only indicates the action type. Once the MCP client has verified the token audience, the task gate must also confirm whether the recipient serves the authorized target. Web content can supply a candidate body, but it has no capability to change the recipient set. The direct user, the Issue author, the tool provider and the dependency publisher each fill in \(\beta=(I,P,R,C,E,F)\). Both Issue and tool returns can enter the plan from untrusted content. The tool provider can also influence registration information, and the dependency publisher can directly alter execution artifacts while bypassing the natural-language path.
 
