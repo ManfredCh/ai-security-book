@@ -271,6 +271,10 @@ PDF 已分页并内嵌全部 25 幅图，离线阅读或打印用它；Markdown 
 **第三方材料不在本许可范围内。** 文中引用的论文、插图、产品名与商标归各自权利人所有。
 逐篇图谱只提供链接，正是因为 97 篇源论文中只有 41 篇的插图许可支持再分发。
 
+**关于 GitHub 侧边栏的标签。** GitHub 的许可检测库只收录 CC0、CC BY 与 CC BY-SA，
+所有 NonCommercial 变体（包括本许可）都会被报成 `Other`。实际适用的是上面这条许可，
+完整法律文本见 [LICENSE](LICENSE)。
+
 ## 相关仓库
 
 - **[Generative and Embodied AI Security](https://github.com/ManfredCh/ai-security-book)** — 统一书稿——6 部 24 章，一件工具贯穿四个领域

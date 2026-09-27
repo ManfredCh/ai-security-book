@@ -300,6 +300,10 @@ the work elsewhere under other terms.
 in the text remain the property of their owners. The per-paper atlas is link-only for exactly this
 reason: of 97 source papers, only 41 carry a licence that would permit redistributing their figures.
 
+**About the label in GitHub's sidebar.** GitHub's licence detector only carries CC0, CC BY and
+CC BY-SA, so every NonCommercial variant — including this one — is reported as `Other`. The
+licence stated above is the operative one, and the full legal text is in [LICENSE](LICENSE).
+
 ## Related repositories
 
 - **[Generative and Embodied AI Security](https://github.com/ManfredCh/ai-security-book)** — the unified book — six parts, 24 chapters, one instrument applied across four domains
